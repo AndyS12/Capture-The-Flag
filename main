@@ -1,0 +1,1598 @@
+Cipher
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+For other uses, see Cipher (disambiguation).
+
+This article includes a list of references, but its sources remain unclear because it has insufficient inline citations. Please help to improve this article by introducing more precise citations. (March 2009) (Learn how and when to remove this template message)
+
+Edward Larsson's rune cipher resembling that found on the Kensington Runestone. Also includes runically unrelated blackletter writing style and pigpen cipher.
+In cryptography, a cipher (or cypher) is an algorithm for performing encryption or decryption—a series of well-defined steps that can be followed as a procedure. An alternative, less common term is encipherment. To encipher or encode is to convert information into cipher or code. In common parlance, "cipher" is synonymous with "code", as they are both a set of steps that encrypt a message; however, the concepts are distinct in cryptography, especially classical cryptography.
+
+Codes generally substitute different length strings of characters in the output, while ciphers generally substitute the same number of characters as are input. There are exceptions and some cipher systems may use slightly more, or fewer, characters when output versus the number that were input.
+
+Codes operated by substituting according to a large codebook which linked a random string of characters or numbers to a word or phrase. For example, "UQJHSE" could be the code for "Proceed to the following coordinates." When using a cipher the original information is known as plaintext, and the encrypted form as ciphertext. The ciphertext message contains all the information of the plaintext message, but is not in a format readable by a human or computer without the proper mechanism to decrypt it.
+
+The operation of a cipher usually depends on a piece of auxiliary information, called a key (or, in traditional NSA parlance, a cryptovariable). The encrypting procedure is varied depending on the key, which changes the detailed operation of the algorithm. A key must be selected before using a cipher to encrypt a message. Without knowledge of the key, it should be extremely difficult, if not impossible, to decrypt the resulting ciphertext into readable plaintext.
+
+Most modern ciphers can be categorized in several ways
+
+By whether they work on blocks of symbols usually of a fixed size (block ciphers), or on a continuous stream of symbols (stream ciphers).
+By whether the same key is used for both encryption and decryption (symmetric key algorithms), or if a different key is used for each (asymmetric key algorithms). If the algorithm is symmetric, the key must be known to the recipient and sender and to no one else. If the algorithm is an asymmetric one, the enciphering key is different from, but closely related to, the deciphering key. If one key cannot be deduced from the other, the asymmetric key algorithm has the public/private key property and one of the keys may be made public without loss of confidentiality.
+
+Contents
+1	Etymology
+2	Versus codes
+3	Types
+3.1	Historical
+3.2	Modern
+4	Key size and vulnerability
+5	See also
+6	Notes
+7	References
+8	External links
+Etymology
+The word "cipher" (minority spelling "cypher") in former times meant "zero" and had the same origin: Middle French as cifre and Medieval Latin as cifra, from the Arabic صفر sifr = zero (see Zero—Etymology). "Cipher" was later used for any decimal digit, even any number. There are many theories about how the word "cipher" may have come to mean "encoding". In fact the more ancient source of word "Cypher" is the ancient Hebrew; there are more than 100 verses in the Hebrew Bible - Torah using word "Cepher": means (Book or Story telling), and in some of them the word "Cipher" literally means (Counting)-- (Numerical description)-- Example, Book 2 Samuel 24:10, Isaiah 33:18, and Jeremiah 52:25.[citation needed]
+
+Encoding often involved numbers.
+The Roman number system was very cumbersome because there was no concept of zero (or empty space). The concept of zero (which was also called "cipher"), which is now common knowledge, was alien to medieval Europe, so confusing and ambiguous to common Europeans that in arguments people would say "talk clearly and not so far fetched as a cipher". Cipher came to mean concealment of clear messages or encryption.
+The French formed the word "chiffre" and adopted the Italian word "zero".
+The English used "zero" for "0", and "cipher" from the word "ciphering" as a means of computing.
+The Germans used the words "Ziffer" (digit) and "Chiffre".
+The Dutch still use the word "cijfer" to refer to a numerical digit.
+The Slovaks, similarly, also use the word "cifra" to refer to a numerical digit.
+The Serbians use the word "cifra", which refers to a digit, or in some cases, any number. Besides "cifra", they use word "broj" for a number.
+The Italians and the Spanish also use the word "cifra" to refer to a number.
+The Swedes use the word "siffra" which refers to a digit and "nummer" to refer to a combination of "siffror".
+Ibrahim Al-Kadi concluded that the Arabic word sifr, for the digit zero, developed into the European technical term for encryption.[1]
+
+As the decimal zero and its new mathematics spread from the Arabic world to Europe in the Middle Ages, words derived from sifr and zephyrus came to refer to calculation, as well as to privileged knowledge and secret codes. According to Ifrah, "in thirteenth-century Paris, a 'worthless fellow' was called a '... cifre en algorisme', i.e., an 'arithmetical nothing'."[2] Cipher was the European pronunciation of sifr, and cipher came to mean a message or communication not easily understood.[3]
+
+Versus codes
+Main article: Code (cryptography)
+In non-technical usage, a "(secret) code" typically means a "cipher". Within technical discussions, however, the words "code" and "cipher" refer to two different concepts. Codes work at the level of meaning—that is, words or phrases are converted into something else and this chunking generally shortens the message.
+
+An example of this is the Commercial Telegraph Code which was used to shorten long telegraph messages which resulted from entering into commercial contracts using exchanges of Telegrams.
+
+Another example is given by whole word ciphers, which allow the user to replace an entire word with a symbol or character, much like the way Japanese utilize Kanji (Japanese) characters to supplement their language. ex "The quick brown fox jumps over the lazy dog" becomes "The quick brown 狐 jumps 过 the lazy 狗".
+
+Ciphers, on the other hand, work at a lower level: the level of individual letters, small groups of letters, or, in modern schemes, individual bits and blocks of bits. Some systems used both codes and ciphers in one system, using superencipherment to increase the security. In some cases the terms codes and ciphers are also used synonymously to substitution and transposition.
+
+Historically, cryptography was split into a dichotomy of codes and ciphers; and coding had its own terminology, analogous to that for ciphers: "encoding, codetext, decoding" and so on.
+
+However, codes have a variety of drawbacks, including susceptibility to cryptanalysis and the difficulty of managing a cumbersome codebook. Because of this, codes have fallen into disuse in modern cryptography, and ciphers are the dominant technique.
+
+Types
+There are a variety of different types of encryption. Algorithms used earlier in the history of cryptography are substantially different from modern methods, and modern ciphers can be classified according to how they operate and whether they use one or two keys.
+
+Historical
+Historical pen and paper ciphers used in the past are sometimes known as classical ciphers. They include simple substitution ciphers (such as Rot 13) and transposition ciphers (such as a Rail Fence Cipher). For example, "GOOD DOG" can be encrypted as "PLLX XLP" where "L" substitutes for "O", "P" for "G", and "X" for "D" in the message. Transposition of the letters "GOOD DOG" can result in "DGOGDOO". These simple ciphers and examples are easy to crack, even without plaintext-ciphertext pairs.[4]
+
+Simple ciphers were replaced by polyalphabetic substitution ciphers (such as the Vigenère) which changed the substitution alphabet for every letter. For example, "GOOD DOG" can be encrypted as "PLSX TWF" where "L", "S", and "W" substitute for "O". With even a small amount of known or estimated plaintext, simple polyalphabetic substitution ciphers and letter transposition ciphers designed for pen and paper encryption are easy to crack.[5] It is possible to create a secure pen and paper cipher based on a one-time pad though, but the usual disadvantages of one-time pads apply.
+
+During the early twentieth century, electro-mechanical machines were invented to do encryption and decryption using transposition, polyalphabetic substitution, and a kind of "additive" substitution. In rotor machines, several rotor disks provided polyalphabetic substitution, while plug boards provided another substitution. Keys were easily changed by changing the rotor disks and the plugboard wires. Although these encryption methods were more complex than previous schemes and required machines to encrypt and decrypt, other machines such as the British Bombe were invented to crack these encryption methods.
+
+Modern
+Modern encryption methods can be divided by two criteria: by type of key used, and by type of input data.
+
+By type of key used ciphers are divided into:
+
+symmetric key algorithms (Private-key cryptography), where the same key is used for encryption and decryption, and
+asymmetric key algorithms (Public-key cryptography), where two different keys are used for encryption and decryption.
+In a symmetric key algorithm (e.g., DES and AES), the sender and receiver must have a shared key set up in advance and kept secret from all other parties; the sender uses this key for encryption, and the receiver uses the same key for decryption. The Feistel cipher uses a combination of substitution and transposition techniques. Most block cipher algorithms are based on this structure. In an asymmetric key algorithm (e.g., RSA), there are two separate keys: a public key is published and enables any sender to perform encryption, while a private key is kept secret by the receiver and enables only him to perform correct decryption.
+
+Ciphers can be distinguished into two types by the type of input data:
+
+block ciphers, which encrypt block of data of fixed size, and
+stream ciphers, which encrypt continuous streams of data
+Key size and vulnerability
+In a pure mathematical attack, (i.e., lacking any other information to help break a cipher) two factors above all count:
+
+Computational power available, i.e., the computing power which can be brought to bear on the problem. It is important to note that average performance/capacity of a single computer is not the only factor to consider. An adversary can use multiple computers at once, for instance, to increase the speed of exhaustive search for a key (i.e., "brute force" attack) substantially.
+Key size, i.e., the size of key used to encrypt a message. As the key size increases, so does the complexity of exhaustive search to the point where it becomes impractical to crack encryption directly.
+Since the desired effect is computational difficulty, in theory one would choose an algorithm and desired difficulty level, thus decide the key length accordingly.
+
+An example of this process can be found at Key Length which uses multiple reports to suggest that a symmetric cipher with 128 bits, an asymmetric cipher with 3072 bit keys, and an elliptic curve cipher with 512 bits, all have similar difficulty at present.
+
+Claude Shannon proved, using information theory considerations, that any theoretically unbreakable cipher must have keys which are at least as long as the plaintext, and used only once: one-time pad.
+
+See also
+icon	Cryptography portal
+Autokey cipher
+Cover-coding
+Cryptography Classification
+Encryption software
+Famous ciphertexts
+Pretty Good Privacy
+Steganography
+Telegraph code
+Notes
+ Ibrahim A. Al-Kadi, "Cryptography and Data Security: Cryptographic Properties of Arabic", proceedings of the Third Saudi Engineering Conference. Riyadh, Saudi Arabia: Nov 24-27, Vol 2:910-921., 1991.
+ Ifrah, Georges (2000). The Universal History of Numbers: From Prehistory to the Invention of the Computer. Wiley. ISBN 0-471-39340-1.
+ The Muslim next door : the Qur'an, the media, and that veil thing, Sumbul Ali-Karamali, 2008, pp. 240-241
+ Saltzman, Benjamin A. "Ut hkskdkxt: Early Medieval Cryptography, Textual Errors, and Scribal Agency (Speculum, forthcoming)". Speculum.
+ Stinson, p. 45
+References
+Richard J. Aldrich, GCHQ: The Uncensored Story of Britain's Most Secret Intelligence Agency, HarperCollins July 2010.
+Helen Fouché Gaines, "Cryptanalysis", 1939, Dover. ISBN 0-486-20097-3
+Ibrahim A. Al-Kadi, "The origins of cryptology: The Arab contributions", Cryptologia, 16(2) (April 1992) pp. 97–126.
+David Kahn, The Codebreakers - The Story of Secret Writing (ISBN 0-684-83130-9) (1967)
+David A. King, The ciphers of the monks - A forgotten number notation of the Middle Ages, Stuttgart: Franz Steiner, 2001 (ISBN 3-515-07640-9)
+Abraham Sinkov, Elementary Cryptanalysis: A Mathematical Approach, Mathematical Association of America, 1966. ISBN 0-88385-622-0
+William Stallings, Cryptography and Network Security, principles and practices, 4th Edition
+Stinson, Douglas R. (1995), Cryptogtaphy / Theory and Practice, CRC Press, ISBN 0-8493-8521-0
+External links
+	Look up cipher in Wiktionary, the free dictionary.
+Kish cypher
+vte
+Cryptography
+Categories: CryptographyCiphers
+Navigation menu
+Not logged inTalkContributionsCreate accountLog inArticleTalkReadEditView historySearch
+
+Search Wikipedia
+Main page
+Contents
+Featured content
+Current events
+Random article
+Donate to Wikipedia
+Wikipedia store
+Interaction
+Help
+About Wikipedia
+Community portal
+Recent changes
+Contact page
+Tools
+What links here
+Related changes
+Upload file
+Special pages
+Permanent link
+Page information
+Wikidata item
+Cite this page
+Print/export
+Create a book
+Download as PDF
+Printable version
+In other projects
+Wikimedia Commons
+
+Languages
+العربية
+Deutsch
+فارسی
+Français
+Bahasa Indonesia
+Italiano
+Português
+Русский
+中文
+16 more
+Edit links
+This page was last edited on 4 September 2018, at 12:28 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile viewWikimedia Foundation Powered by MediaWiki
+
+
+Enigma machine
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+
+Military Enigma machine, model "Enigma I", used during the late 1930s and during the war; displayed at Museo scienza e tecnologia Milano, Italy
+
+Military Enigma machine (in wooden box)
+The Enigma
+cipher machine
+Enigma-logo.svg
+Enigma machine
+Enigma rotors
+Breaking Enigma
+Polish Cipher Bureau
+Doubles
+Grill
+Clock
+Cyclometer
+Bomba
+Zygalski sheets
+Bletchley Park
+Banburismus
+Herivel tip
+Crib
+Bombe
+Hut 3
+Hut 6
+Hut 8
+PC Bruno
+Cadix
+Ultra
+vte
+The Enigma machines were a series of electro-mechanical rotor cipher machines developed and used in the early- to mid-20th century to protect commercial, diplomatic and military communication. Enigma was invented by the German engineer Arthur Scherbius at the end of World War I.[1] Early models were used commercially from the early 1920s, and adopted by military and government services of several countries, most notably Nazi Germany before and during World War II.[2] Several different Enigma models were produced, but the German military models, having a plugboard, were the most complex. Japanese and Italian models were also in use.
+
+Around December 1932, Marian Rejewski, a Polish mathematician and cryptanalyst, while working at the Polish Cipher Bureau, used the theory of permutations and flaws in the German military message encipherment procedures to break the message keys of the plugboard Enigma machine. Rejewski achieved this result without knowledge of the wiring of the machine, so the result did not allow the Poles to decrypt actual messages. The French spy Hans-Thilo Schmidt obtained access to German cipher materials that included the daily keys used in September and October 1932. Those keys included the plugboard settings. The French passed the material to the Poles, and Rejewski used some of that material and the message traffic in September and October to solve for the unknown rotor wiring. Consequently, the Polish mathematicians were able to build their own Enigma machines, which were called Enigma doubles. Rejewski was aided by cryptanalysts Jerzy Różycki and Henryk Zygalski, both of whom had been recruited with Rejewski from Poznań University. The Polish Cipher Bureau developed techniques to defeat the plugboard and find all components of the daily key, which enabled the Cipher Bureau to read the German Enigma messages. Over time, the German cryptographic procedures improved, and the Cipher Bureau developed techniques and designed mechanical devices to continue reading the Enigma traffic. As part of that effort, the Poles exploited quirks of the rotors, compiled catalogues, built a cyclometer to help make a catalogue with 100,000 entries, made Zygalski sheets and built the electro-mechanical cryptologic bomb to search for rotor settings. In 1938, the Germans added complexity to the Enigma machines that finally became too expensive for the Poles to counter. The Poles had six bomby, but when the Germans added two more rotors, ten times as many bomby were needed, and the Poles did not have the resources.[3]
+
+On 26 and 27 July 1939,[4] in Pyry near Warsaw, the Poles initiated French and British military intelligence representatives into their Enigma-decryption techniques and equipment, including Zygalski sheets and the cryptologic bomb, and promised each delegation a Polish-reconstructed Enigma. The demonstration represented a vital basis for the later British continuation and effort.[5] During the war, British cryptologists decrypted a vast number of messages enciphered on Enigma. The intelligence gleaned from this source, codenamed "Ultra" by the British, was a substantial aid to the Allied war effort.[6]
+
+Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed and "turned the tide" in the Allies' favour.[7][8]
+
+
+Contents
+1	Name
+2	Design
+2.1	Electrical pathway
+2.2	Rotors
+2.3	Stepping
+2.4	Turnover
+2.5	Entry wheel
+2.6	Reflector
+2.7	Plugboard
+2.8	Accessories
+2.9	Mathematical analysis
+3	Operation
+3.1	Basic operation
+3.2	Details
+3.3	Indicator
+3.4	Additional details
+4	History
+4.1	Commercial Enigma
+4.2	Military Enigma
+5	Breaking Enigma
+6	Surviving machines
+7	Derivatives
+8	Simulators
+9	In popular culture
+10	See also
+11	References
+11.1	Notes
+11.2	Bibliography
+12	Further reading
+13	External links
+Name
+The German firm Scherbius & Ritter, co-founded by Arthur Scherbius, patented ideas for a cipher machine in 1918 and began marketing the finished product under the brand name Enigma in 1923, initially targeted at commercial markets.[9] With its adoption (in slightly modified form) by the German Navy in 1926 and the German Army and Air Force soon after, the name Enigma became widely known in military circles.
+
+The word enigma is a Latin word, derived from the Ancient Greek word enigma (αίνιγμα) used in English, but not native German.
+
+Design
+
+Enigma in use, 1943
+Like other rotor machines, the Enigma machine is a combination of mechanical and electrical subsystems. The mechanical subsystem consists of a keyboard; a set of rotating disks called rotors arranged adjacently along a spindle; one of various stepping components to turn at least one rotor with each key press, and a series of lamps, one for each letter.
+
+Electrical pathway
+
+Enigma wiring diagram with arrows and the numbers 1 to 9 showing how current flows from key depression to a lamp being lit. The A key is encoded to the D lamp. D yields A, but A never yields A; this property was due to a patented feature unique to the Enigmas, and could be exploited by cryptanalysts in some situations.
+The mechanical parts act in such a way as to form a varying electrical circuit. When a key is pressed, one or more rotors rotate on the spindle. On the sides of the rotors are a series of electrical contacts that, after rotation, line up with contacts on the other rotors or fixed wiring on either end of the spindle. When the rotors are properly aligned, each key on the keyboard is connected to a unique electrical pathway through the series of contacts and internal wiring. Current, typically from a battery, flows through the pressed key, into the newly configured set of circuits and back out again, ultimately lighting one display lamp, which shows the output letter. For example, when encrypting a message starting ANX..., the operator would first press the A key, and the Z lamp might light, so Z would be the first letter of the ciphertext. The operator would next press N, and then X in the same fashion, and so on.
+
+
+The scrambling action of Enigma's rotors is shown for two consecutive letters with the right-hand rotor moving one position between them.
+Current flowed from the battery (1) through a depressed bi-directional keyboard switch (2) to the plugboard (3). Next, it passed through the (unused in this instance, so shown closed) plug "A" (3) via the entry wheel (4), through the wiring of the three (Wehrmacht Enigma) or four (Kriegsmarine M4 and Abwehr variants) installed rotors (5), and entered the reflector (6). The reflector returned the current, via an entirely different path, back through the rotors (5) and entry wheel (4), proceeding through plug "S" (7) connected with a cable (8) to plug "D", and another bi-directional switch (9) to light the appropriate lamp.[10]
+
+The repeated changes of electrical path through an Enigma scrambler implemented a polyalphabetic substitution cipher that provided Enigma's security. The diagram on the right shows how the electrical pathway changed with each key depression, which caused rotation of at least the right-hand rotor. Current passed into the set of rotors, into and back out of the reflector, and out through the rotors again. The greyed-out lines are other possible paths within each rotor; these are hard-wired from one side of each rotor to the other. The letter A encrypts differently with consecutive key presses, first to G, and then to C. This is because the right-hand rotor has stepped, sending the signal on a completely different route. Eventually other rotors step with a key press.
+
+Rotors
+
+Enigma rotor assembly. In the Wehrmacht Enigma, the three installed movable rotors are sandwiched between two fixed wheels: the entry wheel, on the right, and the reflector on the left.
+Main article: Enigma rotor details
+The rotors (alternatively wheels or drums, Walzen in German) formed the heart of an Enigma machine. Each rotor was a disc approximately 10 cm (3.9 in) in diameter made from hard rubber or bakelite with 26 brass, spring-loaded, electrical contact pins arranged in a circle on one face; the other side housing the corresponding number of circular plate electrical contacts. The pins and contacts represent the alphabet—typically the 26 letters A–Z (this will be assumed for the rest of this description). When the rotors were mounted side-by-side on the spindle, the pins of one rotor rested against the plate contacts of the neighbouring rotor, forming an electrical connection. Inside the body of the rotor, 26 wires connected each pin on one side to a contact on the other in a complex pattern. Most of the rotors were identified by Roman numerals, and each issued copy of rotor I was wired identically to all others. The same was true for the special thin beta and gamma rotors used in the M4 naval variant.
+
+
+Three Enigma rotors and the shaft, on which they are placed when in use.
+By itself, a rotor performs only a very simple type of encryption—a simple substitution cipher. For example, the pin corresponding to the letter E might be wired to the contact for letter T on the opposite face, and so on. Enigma's security came from using several rotors in series (usually three or four) and the regular stepping movement of the rotors, thus implementing a polyalphabetic substitution cipher.
+
+When placed in an Enigma, each rotor can be set to one of 26 possible positions. When inserted, it can be turned by hand using the grooved finger-wheel, which protrudes from the internal Enigma cover when closed. So that the operator can know the rotor's position, each had an alphabet tyre (or letter ring) attached to the outside of the rotor disc, with 26 characters (typically letters); one of these could be seen through the window, thus indicating the rotational position of the rotor. In early models, the alphabet ring was fixed to the rotor disc. A later improvement was the ability to adjust the alphabet ring relative to the rotor disc. The position of the ring was known as the Ringstellung ("ring setting"), and was a part of the initial setting prior to an operating session. In modern terms it was a part of the initialization vector.
+
+
+Two Enigma rotors showing electrical contacts, stepping ratchet (on the left) and notch (on the right-hand rotor opposite D).
+Each rotor contained a notch (or more than one) that controlled rotor stepping. In the military variants, the notches are located on the alphabet ring.
+
+The Army and Air Force Enigmas were used with several rotors, initially three. On 15 December 1938, this changed to five, from which three were chosen for a given session. Rotors were marked with Roman numerals to distinguish them: I, II, III, IV and V, all with single notches located at different points on the alphabet ring. This variation was probably intended as a security measure, but ultimately allowed the Polish Clock Method and British Banburismus attacks.
+
+The Naval version of the Wehrmacht Enigma had always been issued with more rotors than the other services: at first six, then seven, and finally eight. The additional rotors were marked VI, VII and VIII, all with different wiring, and had two notches, resulting in more frequent turnover. The four-rotor Naval Enigma (M4) machine accommodated an extra rotor in the same space as the three-rotor version. This was accomplished by replacing the original reflector with a thinner one and by adding a thin fourth rotor. That fourth rotor was one of two types, Beta or Gamma, and never stepped, but could be manually set to any of 26 positions. One of the 26 made the machine perform identically to the three-rotor machine.
+
+Stepping
+To avoid merely implementing a simple (and easily solvable) substitution cipher, every key press caused one or more rotors to step by one twenty-sixth of a full rotation, before the electrical connections were made. This changed the substitution alphabet used for encryption, ensuring that the cryptographic substitution was different at each new rotor position, producing a more formidable polyalphabetic substitution cipher. The stepping mechanism varied slightly from model to model. The right-hand rotor stepped once with each keystroke, and other rotors stepped less frequently.
+
+Turnover
+
+The Enigma stepping motion seen from the side away from the operator. All three ratchet pawls (green) push in unison as a key is depressed. For the first rotor (1), which to the operator is the right-hand rotor, the ratchet (red) is always engaged, and steps with each keypress. Here, the middle rotor (2) is engaged because the notch in the first rotor is aligned with the pawl; it will step (turn over) with the first rotor. The third rotor (3) is not engaged, because the notch in the second rotor is not aligned to the pawl, so it will not engage with the rachet.
+The advancement of a rotor other than the left-hand one was called a turnover by the British. This was achieved by a ratchet and pawl mechanism. Each rotor had a ratchet with 26 teeth and every time a key was pressed, the set of spring-loaded pawls moved forward in unison, trying to engage with a ratchet. The alphabet ring of the rotor to the right normally prevented this. As this ring rotated with its rotor, a notch machined into it would eventually align itself with the pawl, allowing it to engage with the ratchet, and advance the rotor on its left. The right-hand pawl, having no rotor and ring to its right, stepped its rotor with every key depression.[11] For a single-notch rotor in the right-hand position, the middle rotor stepped once for every 26 steps of the right-hand rotor. Similarly for rotors two and three. For a two-notch rotor, the rotor to its left would turn over twice for each rotation.
+
+The first five rotors to be introduced (I–V) contained one notch each, while the additional naval rotors VI, VII and VIII each had two notches. The position of the notch on each rotor was determined by the letter ring which could be adjusted in relation to the core containing the interconnections. The points on the rings at which they caused the next wheel to move were as follows.[12]
+
+Position of turnover notches
+Rotor	Turnover position(s)	BP mnemonic
+I	R	Royal
+II	F	Flags
+III	W	Wave
+IV	K	Kings
+V	A	Above
+VI, VII and VIII	A and N	
+The design also included a feature known as double-stepping. This occurred when each pawl aligned with both the ratchet of its rotor and the rotating notched ring of the neighbouring rotor. If a pawl engaged with a ratchet through alignment with a notch, as it moved forward it pushed against both the ratchet and the notch, advancing both rotors. In a three-rotor machine, double-stepping affected rotor two only. If in moving forward the ratchet of rotor three was engaged, rotor two would move again on the subsequent keystroke, resulting in two consecutive steps. Rotor two also pushes rotor one forward after 26 steps, but since rotor one moves forward with every keystroke anyway, there is no double-stepping.[11] This double-stepping caused the rotors to deviate from odometer-style regular motion.
+
+With three wheels and only single notches in the first and second wheels, the machine had a period of 26 × 25 × 26 = 16,900 (not 26 × 26 × 26, because of double-stepping).[11] Historically, messages were limited to a few hundred letters, and so there was no chance of repeating any combined rotor position during a single session, denying cryptanalysts valuable clues.
+
+To make room for the Naval fourth rotors, the reflector was made much thinner. The fourth rotor fitted into the space made available. No other changes were made, which eased the changeover. Since there were only three pawls, the fourth rotor never stepped, but could be manually set into one of 26 possible positions.
+
+A device that was designed, but not implemented before the war's end, was the Lückenfüllerwalze (gap-fill wheel) that implemented irregular stepping. It allowed field configuration of notches in all 26 positions. If the number of notches was a relative prime of 26 and the number of notches were different for each wheel, the stepping would be more unpredictable. Like the Umkehrwalze-D it also allowed the internal wiring to be reconfigured.[13]
+
+Entry wheel
+The current entry wheel (Eintrittswalze in German), or entry stator, connects the plugboard to the rotor assembly. If the plugboard is not present, the entry wheel instead connects the keyboard and lampboard to the rotor assembly. While the exact wiring used is of comparatively little importance to security, it proved an obstacle to Rejewski's progress during his study of the rotor wirings. The commercial Enigma connects the keys in the order of their sequence on a QWERTZ keyboard: Q→A, W→B, E→C and so on. The military Enigma connects them in straight alphabetical order: A→A, B→B, C→C, and so on. It took inspired guesswork for Rejewski to penetrate the modification.
+
+Reflector
+
+Internal mechanism of an Enigma machine showing the type B reflector and rotor stack.
+With the exception of models A and B, the last rotor came before a 'reflector' (German: Umkehrwalze, meaning 'reversal rotor'), a patented feature unique to Enigma among the period's various rotor machines. The reflector connected outputs of the last rotor in pairs, redirecting current back through the rotors by a different route. The reflector ensured that Enigma is self-reciprocal: conveniently, encryption was the same as decryption. The reflector also gave Enigma the property that no letter ever encrypted to itself. This was a severe conceptual flaw and a cryptological mistake subsequently exploited by codebreakers.
+
+In Model 'C', the reflector could be inserted in one of two different positions. In Model 'D', the reflector could be set in 26 possible positions, although it did not move during encryption. In the Abwehr Enigma, the reflector stepped during encryption in a manner similar to the other wheels.
+
+In the German Army and Air Force Enigma, the reflector was fixed and did not rotate; there were four versions. The original version was marked 'A', and was replaced by Umkehrwalze B on 1 November 1937. A third version, Umkehrwalze C was used briefly in 1940, possibly by mistake, and was solved by Hut 6.[14] The fourth version, first observed on 2 January 1944, had a rewireable reflector, called Umkehrwalze D, allowing the Enigma operator to alter the connections as part of the key settings.
+
+Plugboard
+
+The plugboard (Steckerbrett) was positioned at the front of the machine, below the keys. When in use during World War II, there were ten connections. In this photograph, just two pairs of letters have been swapped (A↔J and S↔O).
+The plugboard (Steckerbrett in German) permitted variable wiring that could be reconfigured by the operator (visible on the front panel of Figure 1; some of the patch cords can be seen in the lid). It was introduced on German Army versions in 1930, and was soon adopted by the Reichsmarine (German Navy). The plugboard contributed more cryptographic strength than an extra rotor. Enigma without a plugboard (known as unsteckered Enigma) can be solved relatively straightforwardly using hand methods; these techniques are generally defeated by the plugboard, driving Allied cryptanalysts to develop special machines to solve it.
+
+A cable placed onto the plugboard connected letters in pairs; for example, E and Q might be a steckered pair. The effect was to swap those letters before and after the main rotor scrambling unit. For example, when an operator presses E, the signal was diverted to Q before entering the rotors. Up to 13 steckered pairs might be used at one time, although only 10 were normally used.
+
+Current flowed from the keyboard through the plugboard, and proceeded to the entry-rotor or Eintrittswalze. Each letter on the plugboard had two jacks. Inserting a plug disconnected the upper jack (from the keyboard) and the lower jack (to the entry-rotor) of that letter. The plug at the other end of the crosswired cable was inserted into another letter's jacks, thus switching the connections of the two letters.
+
+Accessories
+
+The Schreibmax was a printing unit which could be attached to the Enigma, removing the need for laboriously writing down the letters indicated on the light panel.
+Other features made various Enigma machines more secure or more convenient.[15]
+
+Schreibmax
+Some M4 Enigmas used the Schreibmax, a small printer that could print the 26 letters on a narrow paper ribbon. This eliminated the need for a second operator to read the lamps and transcribe the letters. The Schreibmax was placed on top of the Enigma machine and was connected to the lamp panel. To install the printer, the lamp cover and light bulbs had to be removed. It improved both convenience and operational security; the printer could be installed remotely such that the signal officer operating the machine no longer had to see the decrypted plaintext.
+
+Fernlesegerät
+Another accessory was the remote lamp panel Fernlesegerät. For machines equipped with the extra panel, the wooden case of the Enigma was wider and could store the extra panel. A lamp panel version could be connected afterwards, but that required, as with the Schreibmax, that the lamp panel and lightbulbs be removed.[10] The remote panel made it possible for a person to read the decrypted plaintext without the operator seeing it.
+
+Uhr
+
+The Enigma Uhr attachment
+In 1944, the Luftwaffe introduced a plugboard switch, called the Uhr (clock), a small box containing a switch with 40 positions. It replaced the standard plugs. After connecting the plugs, as determined in the daily key sheet, the operator turned the switch into one of the 40 positions, each producing a different combination of plug wiring. Most of these plug connections were, unlike the default plugs, not pair-wise.[10] In one switch position, the Uhr did not swap letters, but simply emulated the 13 stecker wires with plugs.
+
+Mathematical analysis
+The Enigma transformation for each letter can be specified mathematically as a product of permutations.[16] Assuming a three-rotor German Army/Air Force Enigma, let {\displaystyle P} P denote the plugboard transformation, {\displaystyle U} U denote that of the reflector, and {\displaystyle L,M,R} L,M,R denote those of the left, middle and right rotors respectively. Then the encryption {\displaystyle E} E can be expressed as
+
+{\displaystyle E=PRMLUL^{-1}M^{-1}R^{-1}P^{-1}.} E=PRMLUL^{-1}M^{-1}R^{-1}P^{-1}.
+After each key press, the rotors turn, changing the transformation. For example, if the right-hand rotor {\displaystyle R} R is rotated {\displaystyle i} i positions, the transformation becomes {\displaystyle \rho ^{i}R\rho ^{-i}} \rho ^{i}R\rho ^{-i}, where {\displaystyle \rho } \rho  is the cyclic permutation mapping A to B, B to C, and so forth. Similarly, the middle and left-hand rotors can be represented as {\displaystyle j} j and {\displaystyle k} k rotations of {\displaystyle M} M and {\displaystyle L} L. The encryption transformation can then be described as
+
+{\displaystyle E=P(\rho ^{i}R\rho ^{-i})(\rho ^{j}M\rho ^{-j})(\rho ^{k}L\rho ^{-k})U(\rho ^{k}L^{-1}\rho ^{-k})(\rho ^{j}M^{-1}\rho ^{-j})(\rho ^{i}R^{-1}\rho ^{-i})P^{-1}.} E=P(\rho ^{i}R\rho ^{-i})(\rho ^{j}M\rho ^{-j})(\rho ^{k}L\rho ^{-k})U(\rho ^{k}L^{-1}\rho ^{-k})(\rho ^{j}M^{-1}\rho ^{-j})(\rho ^{i}R^{-1}\rho ^{-i})P^{-1}.
+Combining three rotors from a set of five, the rotor settings with 26 positions, and the plugboard with ten pairs of letters connected, the military Enigma has 158,962,555,217,826,360,000 (nearly 159 quintillion) different settings.[17]
+
+Operation
+Basic operation
+File:Encrypting and decrypting using an enigma machine.webm
+Enciphering and deciphering using an Enigma machine
+A German Enigma operator would be given a plaintext message to encrypt. For each letter typed in, a lamp indicated a different letter according to a pseudo-random substitution, based upon the wiring of the machine. The letter indicated by the lamp would be recorded as the enciphered substitution. The action of pressing a key also moved the rotor so that the next key press used a different electrical pathway, and thus a different substitution would occur. For each key press there was rotation of at least the right hand rotor, giving a different substitution alphabet. This continued for each letter in the message until the message was completed and a series of substitutions, each different from the others, had occurred to create a cyphertext from the plaintext. The cyphertext would then be transmitted as normal to an operator of another Enigma machine. This operator would key in the cyphertext and—as long as all the settings of the deciphering machine were identical to those of the enciphering machine—for every key press the reverse substitution would occur and the plaintext message would emerge.
+
+Details
+
+German Kenngruppenheft (a U-boat codebook with grouped key codes)
+
+Monthly key list Number 649 for the German Air Force Enigma, including settings for the reconfigurable reflector.
+In use, the Enigma required a list of daily key settings and auxiliary documents. In German military practice, communications were divided into separate networks, each using different settings. These communication nets were termed keys at Bletchley Park, and were assigned code names, such as Red, Chaffinch, and Shark. Each unit operating in a network was given the same settings list for its Enigma, valid for a period of time. The procedures for German Naval Enigma were more elaborate and more secure than those in other services and employed auxiliary codebooks. Navy codebooks were printed in red, water-soluble ink on pink paper so that they could easily be destroyed if they were endangered or if the vessel was sunk.
+
+An Enigma machine's setting (its cryptographic key in modern terms; Schlüssel in German) specified each operator-adjustable aspect of the machine:
+
+Wheel order (Walzenlage) – the choice of rotors and the order in which they are fitted.
+Ring settings (Ringstellung) – the position of each alphabet ring relative to its rotor wiring.
+Plug connections (Steckerverbindungen) – the pairs of letters in the plugboard that are connected together.
+In very late versions, the wiring of the reconfigurable reflector.
+Starting position of the rotors (Grundstellung) – chosen by the operator, should be different for each message.
+For a message to be correctly encrypted and decrypted, both sender and receiver had to configure their Enigma in the same way; rotor selection and order, ring positions, plugboard connections and starting rotor positions must be identical. Except for the starting positions, these settings were established beforehand, distributed in key lists and changed daily. For example, the settings for the 18th day of the month in the German Luftwaffe Enigma key list number 649 (see image) were as follows:
+
+Wheel order: IV, II, V
+Ring settings: 15, 23, 26
+Plugboard connections: EJ OY IV AQ KW FX MT PS LU BD
+Reconfigurable reflector wiring: IU AS DV GL FT OX EZ CH MR KN BQ PW
+Indicator groups: lsa zbw vcj rxn
+Enigma was designed to be secure even if the rotor wiring was known to an opponent, although in practice considerable effort protected the wiring configuration. If the wiring is secret, the total number of possible configurations has been calculated to be around 3 x 10114 (approximately 380 bits); with known wiring and other operational constraints, this is reduced to around 1023 (76 bits).[18] Users of Enigma were confident of its security because of the large number of possibilities; it was not then feasible for an adversary to even begin to try a brute force attack.
+
+Indicator
+See also: Cryptanalysis § Indicator
+Most of the key was kept constant for a set time period, typically a day. A different initial rotor position was used for each message, a concept similar to an initialisation vector in modern cryptography. The reason is that encrypting many messages with identical or near-identical settings (termed in cryptanalysis as being in depth), would enable an attack using a statistical procedure such as Friedman's Index of coincidence.[19] The starting position for the rotors was transmitted just before the ciphertext, usually after having been enciphered. The exact method used was termed the indicator procedure. Design weakness and operator sloppiness in these indicator procedures were two of the main weaknesses that made cracking Enigma possible.
+
+
+Figure 2. With the inner lid down, the Enigma was ready for use. The finger wheels of the rotors protruded through the lid, allowing the operator to set the rotors, and their current position, here RDKP, was visible to the operator through a set of windows.
+One of the earliest indicator procedures for the Enigma was cryptographically flawed and allowed Polish cryptanalysts to make the initial breaks into the plugboard Enigma. The procedure had the operator set his machine in accordance with the secret settings that all operators on the net shared. The settings included an initial position for the rotors (the Grundstellung), say, AOH. The operator turned his rotors until AOH was visible through the rotor windows. At that point, the operator chose his own arbitrary starting position for the message he would send. An operator might select EIN, and that became the message setting for that encryption session. The operator then typed EIN into the machine twice. The results were the encrypted indicator. The EIN typed twice might encrypt into XHTLOA, which would be transmitted along with the encrypted message. Finally, the operator then spun the rotors to his message settings, EIN in this example, and typed the plaintext of the message.
+
+At the receiving end, the operator set the machine to the initial settings and typed in the first six letters of the message (XHTLOA). In this example, EINEIN emerged on the lamps, so the operator would learn the message setting that the sender used to encrypt this message. The receiving operator would set his rotors to EIN, type in the rest of the ciphertext, and get the deciphered message.
+
+This indicator scheme had two weaknesses. First, the use of a global initial position (Grundstellung) meant all message keys used the same polyalphabetic substitution. In later indicator procedures, the operator selected his initial position for encrypting the indicator and sent that initial position in the clear. The second problem was the repetition of the indicator, which was a serious security flaw. The message setting was encoded twice, resulting in a relation between first and fourth, second and fifth, and third and sixth character. These security flaws enabled the Polish Cipher Bureau to break into the pre-war Enigma system as early as 1932. The early indicator procedure was subsequently described by German cryptanalysts as the "faulty indicator technique".[20]
+
+During World War II, codebooks were only used each day to set up the rotors, their ring settings and the plugboard. For each message, the operator selected a random start position, let's say WZA, and a random message key, perhaps SXT. He moved the rotors to the WZA start position and encoded the message key SXT. Assume the result was UHL. He then set up the message key, SXT, as the start position and encrypted the message. Next, he transmitted the start position, WZA, the encoded message key, UHL, and then the ciphertext. The receiver set up the start position according to the first trigram, WZA, and decoded the second trigram, UHL, to obtain the SXT message setting. Next, he used this SXT message setting as the start position to decrypt the message. This way, each ground setting was different and the new procedure avoided the security flaw of double encoded message settings.[21]
+
+This procedure was used by Wehrmacht and Luftwaffe only. The Kriegsmarine procedures on sending messages with the Enigma were far more complex and elaborate. Prior to encryption the message was encoded using the Kurzsignalheft code book. The Kurzsignalheft contained tables to convert sentences into four-letter groups. A great many choices were included, for example, logistic matters such as refuelling and rendezvous with supply ships, positions and grid lists, harbour names, countries, weapons, weather conditions, enemy positions and ships, date and time tables. Another codebook contained the Kenngruppen and Spruchschlüssel: the key identification and message key.[22]
+
+Additional details
+The Army Enigma machine used only the 26 alphabet characters. Punctuation was replaced with rare character combinations. A space was omitted or replaced with an X. The X was generally used as full-stop.
+
+Some punctuation marks were different in other parts of the armed forces. The Wehrmacht replaced a comma with ZZ and the question mark with FRAGE or FRAQ.
+
+The Kriegsmarine replaced the comma with Y and the question mark with UD. The combination CH, as in "Acht" (eight) or "Richtung" (direction), was replaced with Q (AQT, RIQTUNG). Two, three and four zeros were replaced with CENTA, MILLE and MYRIA.
+
+The Wehrmacht and the Luftwaffe transmitted messages in groups of five characters.
+
+The Kriegsmarine, using the four rotor Enigma, had four-character groups. Frequently used names or words were varied as much as possible. Words like Minensuchboot (minesweeper) could be written as MINENSUCHBOOT, MINBOOT, MMMBOOT or MMM354. To make cryptanalysis harder, messages were limited to 250 characters. Longer messages were divided into several parts, each using a different message key.[23][24]
+
+History
+The Enigma family included multiple designs. The earliest were commercial models dating from the early 1920s. Starting in the mid-1920s, the German military began to use Enigma, making a number of security-related changes. Various nations either adopted or adapted the design for their own cipher machines.
+
+
+A selection of seven Enigma machines and paraphernalia exhibited at the U.S. National Cryptologic Museum. From left to right, the models are: 1) Commercial Enigma; 2) Enigma T; 3) Enigma G; 4) Unidentified; 5) Luftwaffe (Air Force) Enigma; 6) Heer (Army) Enigma; 7) Kriegsmarine (Naval) Enigma—M4.
+An estimated 100,000 Enigma machines were constructed. After the end of World War II, the Allies sold captured Enigma machines, still widely considered secure, to developing countries.[25]
+
+Commercial Enigma
+
+Scherbius's Enigma patent—U.S. Patent 1,657,411, granted in 1928.
+On 23 February 1918,[not in citation given] Arthur Scherbius applied for a patent for a ciphering machine that used rotors.[26] Scherbius and E. Richard Ritter founded the firm of Scherbius & Ritter. They approached the German Navy and Foreign Office with their design, but neither agency was interested. Scherbius & Ritter then assigned the patent rights to Gewerkschaft Securitas, who founded the Chiffriermaschinen Aktien-Gesellschaft (Cipher Machines Stock Corporation) on 9 July 1923; Scherbius and Ritter were on the board of directors.
+
+Enigma A (1923)
+Chiffriermaschinen AG began advertising a rotor machine—Enigma model A—which was exhibited at the Congress of the International Postal Union in 1924. The machine was heavy and bulky, incorporating a typewriter. It measured 65×45×38 cm and weighed about 50 kilograms (110 lb).
+
+Enigma B (1924)
+In 1924 Enigma model B was introduced, and was of a similar construction.[27] While bearing the Enigma name, both models A and B were quite unlike later versions: they differed in physical size and shape, but also cryptographically, in that they lacked the reflector.
+
+Enigma C (1926)
+The reflector—suggested by Scherbius's colleague Willi Korn—was introduced in Enigma C (1926).
+
+Model C was smaller and more portable than its predecessors. It lacked a typewriter, relying on the operator; hence the informal name of "glowlamp Enigma" to distinguish it from models A and B.
+
+Enigma D (1927)
+The Enigma C quickly gave way to Enigma D (1927). This version was widely used, with shipments to Sweden, the Netherlands, United Kingdom, Japan, Italy, Spain, United States and Poland. In 1927 Hugh Foss at the British Government Code and Cypher School was able to show that commercial Enigma machines could be broken provided that suitable cribs were available.[28]
+
+"Navy Cipher D" – Italian Navy
+Other countries used Enigma machines. The Italian Navy adopted the commercial Enigma as "Navy Cipher D". The Spanish also used commercial Enigma during their Civil War. British codebreakers succeeded in breaking these machines, which lacked a plugboard.[29] Enigma were also used by diplomatic services.
+
+Enigma H (1929)
+
+A rare 8-rotor printing Enigma model H (1929).
+There was also a large, eight-rotor printing model, the Enigma H, called Enigma II by the Reichswehr. In 1933 the Polish Cipher Bureau detected that it was in use for high-level military communications, but that it was soon withdrawn, as it was unreliable and jammed frequently.[30]
+
+Enigma K
+The Swiss used a version of Enigma called model K or Swiss K for military and diplomatic use, which was very similar to commercial Enigma D. The machine was cracked by Poland, France, the United Kingdom and the United States (the latter codenamed it INDIGO). An Enigma T model (codenamed Tirpitz) was used by Japan.
+
+Typex
+Once the British broke the Enigma, they fixed the problem with it and created their own, which the Germans believed to be unsolvable.[31]
+
+Military Enigma
+Funkschlüssel C
+The Reichsmarine was the first military branch to adopt Enigma. This version, named Funkschlüssel C ("Radio cipher C"), had been put into production by 1925 and was introduced into service in 1926.[32]
+
+The keyboard and lampboard contained 29 letters—A-Z, Ä, Ö and Ü—which were arranged alphabetically, as opposed to the QWERTZUI ordering.[33] The rotors had 28 contacts, with the letter X wired to bypass the rotors unencrypted.[8] Three rotors were chosen from a set of five[34] and the reflector could be inserted in one of four different positions, denoted α, β, γ and δ.[35] The machine was revised slightly in July 1933.[36]
+
+Enigma G (1928–1930)
+By 15 July 1928,[37] the German Army (Reichswehr) had introduced their own exclusive version of the Enigma machine; the Enigma G.
+
+The Abwehr used the Enigma G (the Abwehr Enigma). This Enigma variant was a four-wheel unsteckered machine with multiple notches on the rotors. This model was equipped with a counter which incremented upon each key press, and so is also known as the "counter machine" or the Zählwerk Enigma.
+
+Wehrmacht Enigma I (1930–1938)
+Enigma machine G was modified to the Enigma I by June 1930.[38] Enigma I is also known as the Wehrmacht, or "Services" Enigma, and was used extensively by German military services and other government organisations (such as the railways[39]) before and during World War II.
+
+
+Heinz Guderian in the Battle of France, with an Enigma machine
+The major difference between Enigma I (German Army version from 1930), and commercial Enigma models was the addition of a plugboard to swap pairs of letters, greatly increasing cryptographic strength.
+
+Other differences included the use of a fixed reflector and the relocation of the stepping notches from the rotor body to the movable letter rings. The machine measured 28 cm × 34 cm × 15 cm (11.0 in × 13.4 in × 5.9 in) and weighed around 12 kg (26 lb).[40]
+
+In August 1935, the Air Force introduced the Wehrmacht Enigma for their communications.[38]
+
+M3 (1934)
+By 1930, the Reichswehr had suggested that the Navy adopt their machine, citing the benefits of increased security (with the plugboard) and easier interservice communications.[41] The Reichsmarine eventually agreed and in 1934[42] brought into service the Navy version of the Army Enigma, designated Funkschlüssel ' or M3. While the Army used only three rotors at that time, the Navy specified a choice of three from a possible five.[43]
+
+
+Enigma in use on the Russian front
+Two extra rotors (1938)
+In December 1938, the Army issued two extra rotors so that the three rotors were chosen from a set of five.[38] In 1938, the Navy added two more rotors, and then another in 1939 to allow a choice of three rotors from a set of eight.[43]
+
+M4 (1942)
+See also: German Navy 4-rotor Enigma
+A four-rotor Enigma was introduced by the Navy for U-boat traffic on 1 February 1942, called M4 (the network was known as Triton, or Shark to the Allies). The extra rotor was fitted in the same space by splitting the reflector into a combination of a thin reflector and a thin fourth rotor.
+
+
+Enigma G, used by the Abwehr, had four rotors, no plugboard, and multiple notches on the rotors.
+
+ 
+
+The German-made Enigma-K used by the Swiss Army had three rotors and a reflector, but no plugboard. It had locally re-wired rotors and an additional lamp panel.
+
+ 
+
+An Enigma model T (Tirpitz)—a modified commercial Enigma K manufactured for use by the Japanese.
+
+ 
+
+An Enigma machine in the UK's Imperial War Museum
+
+ 
+
+Enigma in use in Russia (image Bundesarchiv)
+
+ 
+
+Enigma
+
+Breaking Enigma
+Main article: Cryptanalysis of the Enigma
+Surviving machines
+
+U.S. Enigma replica on display at the National Cryptologic Museum in Fort Meade, Maryland
+The effort to break the Enigma was not disclosed until the 1970s. Since then, interest in the Enigma machine has grown. Enigmas are on public display in museums around the world, and several are in the hands of private collectors and computer history enthusiasts.[44]
+
+The Deutsches Museum in Munich has both the three- and four-rotor German military variants, as well as several civilian versions. Enigma machines are exhibited at the National Codes Centre in Bletchley Park, the Government Communications Headquarters, the Science Museum in London, the Polish Army Museum in Warsaw, the Swedish Army Museum (Armémuseum) in Stockholm, the Military Museum of A Coruña in Spain, the Nordland Red Cross War Memorial Museum in Narvik,[45] Norway, The Artillery, Engineers and Signals Museum in Hämeenlinna, Finland[46] the Technical University of Denmark in Lyngby, Denmark, and at the Australian War Memorial and in the foyer of the Defence Signals Directorate, both in Canberra, Australia. The Jozef Pilsudski Institute in London exhibits a rare Polish Enigma double assembled in France in 1940.[47][48]
+
+
+A four-rotor Kriegsmarine (German Navy, 1. February 1942 to 1945) Enigma machine on display at the U.S. National Cryptologic Museum
+In the United States, Enigma machines can be seen at the Computer History Museum in Mountain View, California, and at the National Security Agency's National Cryptologic Museum in Fort Meade, Maryland, where visitors can try their hand at enciphering and deciphering messages. Two machines that were acquired after the capture of U-505 during World War II are on display at the Museum of Science and Industry in Chicago, Illinois. A four rotor device is on display in the ANZUS Corridor of the Pentagon on the second floor, A ring, between corridors 9 and 10. This machine is on loan from Australia. The United States Air Force Academy in Colorado Springs has a machine on display in the Computer Science Department. There is also a machine located at the National World War II Museum in New Orleans. The Museum of World War II in Boston has seven Enigma machines on display, including a U-Boat four-rotor model, one of three surviving examples of an Enigma machine with a printer, one of fewer than ten surviving ten-rotor code machines, an example blown up by a retreating German Army unit, and two three-rotor Enigmas that visitors can operate to encode and decode messages themselves.
+
+
+A four-rotor Kriegsmarine Enigma machine on display at the Museum of the Second World War, Gdańsk, Poland
+In Canada, a Swiss Army issue Enigma-K, is in Calgary, Alberta. It is on permanent display at the Naval Museum of Alberta inside the Military Museums of Calgary. A 4-rotor Enigma machine is on display at the Military Communications and Electronics Museum at Canadian Forces Base (CFB) Kingston in Kingston, Ontario.
+
+Occasionally, Enigma machines are sold at auction; prices have in recent years ranged from US$40,000[49][50] to US$547,500[51] in 2017. Replicas are available in various forms, including an exact reconstructed copy of the Naval M4 model, an Enigma implemented in electronics (Enigma-E), various simulators and paper-and-scissors analogues.
+
+A rare Abwehr Enigma machine, designated G312, was stolen from the Bletchley Park museum on 1 April 2000. In September, a man identifying himself as "The Master" sent a note demanding £25,000 and threatening to destroy the machine if the ransom was not paid. In early October 2000, Bletchley Park officials announced that they would pay the ransom, but the stated deadline passed with no word from the blackmailer. Shortly afterward, the machine was sent anonymously to BBC journalist Jeremy Paxman, missing three rotors.
+
+In November 2000, an antiques dealer named Dennis Yates was arrested after telephoning The Sunday Times to arrange the return of the missing parts. The Enigma machine was returned to Bletchley Park after the incident. In October 2001, Yates was sentenced to 10 months in prison and served three months.[52]
+
+In October 2008, the Spanish daily newspaper El País reported that 28 Enigma machines had been discovered by chance in an attic of Army headquarters in Madrid. These 4-rotor commercial machines had helped Franco's Nationalists win the Spanish Civil War because, though the British cryptologist Alfred Dilwyn Knox in 1937 broke the cipher generated by Franco's Enigma machines, this was not disclosed to the Republicans, who failed to break the cipher. The Nationalist government continued using its 50 Enigmas into the 1950s. Some machines have gone on display in Spanish military museums,[53][54] including one at the National Museum of Science and Technology (MUNCYT) in La Coruña. Two have been given to Britain's GCHQ.[55]
+
+The Bulgarian military used Enigma machines with a Cyrillic keyboard; one is on display in the National Museum of Military History in Sofia.[56]
+
+Derivatives
+
+This section possibly contains original research. Please improve it by verifying the claims made and adding inline citations. Statements consisting only of original research should be removed. (April 2013) (Learn how and when to remove this template message)
+The Enigma was influential in the field of cipher machine design, spinning off other rotor machines. The British Typex was originally derived from the Enigma patents; Typex even includes features from the patent descriptions that were omitted from the actual Enigma machine. The British paid no royalties for the use of the patents, to protect secrecy. The Typex implementation is not the same as that found in German or other Axis versions.
+
+A Japanese Enigma clone was codenamed GREEN by American cryptographers. Little used, it contained four rotors mounted vertically. In the U.S., cryptologist William Friedman designed the M-325, a machine logically similar, although not in construction.
+
+A unique rotor machine was constructed in 2002 by Netherlands-based Tatjana van Vark. This device makes use of 40-point rotors, allowing letters, numbers and some punctuation to be used; each rotor contains 509 parts.[57]
+
+Machines like the SIGABA, NEMA, Typex and so forth, are deliberately not considered to be Enigma derivatives as their internal ciphering functions are not mathematically identical to the Enigma transform.
+
+Several software implementations exist, but not all exactly match Enigma behaviour. The most commonly used software derivative (that is not compliant with any hardware implementation of the Enigma) is at EnigmaCo.de. Many Java applet Enigmas only accept single letter entry, complicating use even if the applet is Enigma compliant. Technically, Enigma@home is the largest scale deployment of a software Enigma, but the decoding software does not implement encipherment making it a derivative (as all original machines could cipher and decipher).
+
+A user-friendly 3-rotor simulator, where users can select rotors, use the plugboard and define new settings for the rotors and reflectors is available.[58] The output appears in separate windows which can be independently made "invisible" to hide decryption.[59] Another includes an "autotyping" function which takes plaintext from a clipboard and converts it to cyphertext (or vice versa) at one of four speeds. The "very fast" option produces 26 characters in less than one second.[60]
+
+
+A Japanese Enigma clone, codenamed GREEN by American cryptographers.
+
+ 
+
+Tatjana van Vark's Enigma-inspired rotor machine.
+
+ 
+
+Electronic implementation of an Enigma machine, sold at the Bletchley Park souvenir shop
+
+Simulators
+Name	Platform	Machine types	Uhr	UKW-D
+Franklin Heath Enigma Simulator[61]	Android	K Railway, Kriegsmarine M3,M4	No	No
+EnigmAndroid[62]	Android	Wehrmacht I, Kriegsmarine M3, M4, Abwehr G31, G312, G260, D, K, Swiss-K, KD, R, T	No	No
+Andy Carlson Enigma Applet (Standalone Version)[63]	Java	Kriegsmarine M3, M4	No	No
+Minarke (Minarke Is Not A Real Kriegsmarine Enigma)[64]	C/Posix/CLI (MacOS, Linux, UNIX, etc.)	Wehrmacht, Kriegsmarine, M3, M4	No	No
+Russell Schwager Enigma Simulator[65]	Java	Kriegsmarine M3	No	No
+PA3DBJ G-312 Enigma Simulator[66]	Javascript	G312 Abwehr	No	No
+Daniel Palloks Universal Enigma[67]	Javascript	Wehrmacht, Kriegsmarine M3, M4. D (commercial), K (Swiss), Railway, Tirpitz (Japan), A-865 Zählwerk, G-111 Hungary/Munich, G-260 Abwehr/Argentina, G-312 Abwehr/Bletchley	Yes	No
+Universal Enigma Machine Simulator[68]	Javascript	D, I, Norway, M3, M4, Zählwerk, G, G-111, G-260, G-312, K, Swiss-K, KD, Railway, T	Yes	Yes
+Terry Long Enigma Simulator[69]	MacOS	Kriegsmarine M3	No	No
+Paul Reuvers Enigma Simulator for RISC OS[70]	RISC OS	Kriegsmarine M3, M4, G-312 Abwehr	No	No
+Dirk Rijmenants Enigma Simulator v7.0[71]	Windows	Wehrmacht, Kriegsmarine M3, M4	No	No
+Frode Weierud Enigma Simulators[72]	Windows	Abwehr, Kriegsmarine M3, M4, Railway	No	No
+Alexander Pukall Enigma Simulator [73]	Windows	Wehrmacht, Luftwaffe	No	No
+CrypTool 2 - Enigma component and cryptanalysis [74]	Windows	A/B/D (commercial), Abwehr, Reichsbahn, Swiss-K, Enigma M3, Enigma M4	No	No
+In popular culture
+Literature
+Hugh Whitemore's play, Breaking the Code (1986), focuses on the life and death of Alan Turing, who was the central force in continuing to solve the Enigma code in the United Kingdom, during World War II. Turing was played by Derek Jacobi, who also played Turing in a 1996 television adaptation of the play.
+Robert Harris' novel Enigma (1995) is set against the backdrop of World War II Bletchley Park and cryptologists working to read Naval Enigma in Hut 8.
+Neal Stephenson's novel Cryptonomicon (1999) prominently features the Enigma machine and efforts to break it, and portrays the German U-boat command under Karl Dönitz using it in apparently deliberate ignorance of its penetration.
+Films
+Sekret Enigmy (1979; translation: The Enigma Secret), is a Polish film dealing with Polish aspects of the subject.[75]
+The plot of the film U-571 (released in 2000) revolves around an attempt by American, rather than British, forces to seize an Enigma machine from a German U-boat.
+Harris' book, with substantial changes in plot, was adapted as the film Enigma (2001), directed by Michael Apted and starring Kate Winslet and Dougray Scott. The film was criticised for historical inaccuracies, including neglect of the role of Poland's Biuro Szyfrów. The film—like the book—makes a Pole the villain, who seeks to betray the secret of Enigma decryption.[76]
+The film The Imitation Game (2014) tells the story of Alan Turing and his attempts to crack the Enigma machine code during World War II.[44]
+Television
+In the British television series The Bletchley Circle, the Typex was used by the protagonists during the war, and in Season 2, Episode 4, they visit Bletchley Park to seek one out, in order to crack the code of the black market procurer and smuggler Marta, who used the Typex to encode her ledger. The Circle, forced to settle for using an Enigma, instead, successfully cracks the code.
+In season 5, episode 23 ("Scrambled") of the American television series Elementary a drug smuggling gang uses a four-rotor Enigma machine as part of their effort to encrypt their communications.
+See also
+Ultra
+Bletchley Park
+Beaumanor Hall, a stately home used during the Second World War for military intelligence
+Joan Clarke
+Erich Fellgiebel
+Gisbert Hasenjaeger—responsible for Enigma security
+Fritz Thiele
+United States Naval Computing Machine Laboratory
+Arlington Hall
+Enigma - disambiguation page
+References
+Notes
+ Singh, Simon (26 January 2011). The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography. Knopf Doubleday Publishing Group. ISBN 978-0-307-78784-2.
+ Lord, Bob (1998–2010). "1937 Enigma Manual by: Jasper Rosal – English Translation". Retrieved 31 May 2011.
+ Kozaczuk 1984, p. 63.
+ Ralph Erskine: The Poles Reveal their Secrets – Alastair Dennistons's Account of the July 1939 Meeting at Pyry. Cryptologia. Rose-Hulman Institute of Technology. Taylor & Francis, Philadelphia PA 30.2006,4, p. 294.
+ Gordon Welchman, who became head of Hut 6 at Bletchley Park, has written: "Hut 6 Ultra would never have gotten off the ground if we had not learned from the Poles, in the nick of time, the details both of the German military version of the commercial Enigma machine, and of the operating procedures that were in use." Gordon Welchman, The Hut Six Story, 1982, p. 289.
+ Much of the German cipher traffic was encrypted on the Enigma machine, and the term "Ultra" has often been used almost synonymously with "Enigma decrypts". Ultra also encompassed decrypts of the German Lorenz SZ 40 and 42 machines that were used by the German High Command, and decrypts of Hagelin ciphers and other Italian ciphers and codes, as well as of Japanese ciphers and codes such as Purple and JN-25.
+ Kahn 1991.
+ Stripp 1993.
+ "History of the Enigma". Crypto Museum. Retrieved 1 Dec 2017.
+ Rijmenants, Dirk; Technical details of the Enigma machine Cipher Machines & Cryptology
+ Hamer, David (January 1997). "Enigma: Actions Involved in the 'Double-Stepping' of the Middle Rotor". Cryptologia. 21 (1): 47–50. doi:10.1080/0161-119791885779. Archived from the original (zip) on 19 July 2011.
+ Sale, Tony. "Technical specifications of the Enigma rotors". Technical Specification of the Enigma. Retrieved 15 November 2009.
+ "Lückenfüllerwalze". Cryptomuseum.com. Retrieved 17 July 2012.
+ Philip Marks, "Umkehrwalze D: Enigma's Rewirable Reflector — Part I", Cryptologia 25(2), April 2001, pp. 101–141
+ Reuvers, Paul (2008). "Enigma accessories". Retrieved 22 July 2010.
+ Rejewski 1980.
+ 158,962,555,217,826,360,000 – Numberphile on YouTube
+ Miller, A. Ray (2001). "The Cryptographic Mathematics of Enigma" (PDF). National Security Agency.
+ Friedman, W.F. (1922). The index of coincidence and its applications in cryptology. Department of Ciphers. Publ 22. Geneva, Illinois, USA: Riverbank Laboratories. OCLC 55786052.
+ Huttenhain & Fricke 1945, pp. 4,5.
+ Rijmenants, Dirk; Enigma message procedures Cipher Machines & Cryptology
+ Rijmenants, Dirk; Kurzsignalen on German U-boats Cipher Machines & Cryptology
+ "The translated 1940 Enigma General Procedure". codesandciphers.org.uk. Retrieved 16 October 2006.
+ "The translated 1940 Enigma Officer and Staff Procedure". codesandciphers.org.uk. Retrieved 16 October 2006.
+ Bauer 2000, p. 112.
+ US 1657411, Scherbius, Arthur, "Ciphering Machine", issued January 24, 1928, assigned to Chiffriermaschinen AG
+ "image of Enigma Type B". Archived from the original on 21 October 2005.
+ Bletchley Park Trust Museum display
+ Smith 2006, p. 23.
+ Kozaczuk 1984, p. 28.
+ Numberphile (2013-01-14), Flaw in the Enigma Code - Numberphile, retrieved 2017-02-14
+ Kahn 1991, pp. 39–41, 299.
+ Ulbricht 2005, p. 4.
+ Kahn 1991, pp. 40, 299.
+ Bauer 2000, p. 108.
+ Stripp 1993, plate 3.
+ Kahn 1991, pp. 41, 299.
+ Kruh & Deavours 2002, p. 97.
+ Smith 2000, p. 73.
+ Stripp, 1993
+ Kahn 1991, p. 43.
+ Kahn 1991, p. 43 says August 1934. Kruh & Deavours 2002, p. 15 say October 2004.
+ Kruh & Deavours 2002, p. 98.
+ Ng, David. "Enigma machine from World War II finds unlikely home in Beverly Hills". Los Angeles Times. 22 January 2015.
+ "War Museum".
+ "The National Signals Museum".
+ "Enigma exhibition in London pays tribute to Poles". Polskie Radio dla Zagranicy. Retrieved 2016-04-05.
+ "13 March 2016, 'Enigma Relay'– how Poles passed the baton to Brits in the run for WWII victory,". pilsudski.org.uk. Retrieved 2016-04-05.
+ Hamer, David; Enigma machines – known locations* Archived 4 November 2011 at the Wayback Machine.
+ Hamer, David; Selling prices of Enigma and NEMA – all prices converted to US$ Archived 27 September 2011 at the Wayback Machine.
+ Christi's; 4 Rotor enigma auction
+ "Man jailed over Enigma machine". BBC News. 19 October 2001. Retrieved 2 May 2010.
+ Graham Keeley. Nazi Enigma machines helped General Franco in Spanish Civil War, The Times, 24 October 2008, p. 47.
+ "Taller de Criptografía – Enigmas españolas". Cripto.es. Retrieved 8 September 2013.
+ "Schneier on Security: Rare Spanish Enigma Machine". Schneier.com. 26 March 2012. Retrieved 8 September 2013.
+ "Communication equipment". znam.bg. 29 November 2003.
+ van Vark, Tatjana The coding machine
+ 3 rotor download
+ Enigma at Multimania
+ Autotype download
+ Franklin Heath Ltd. "Enigma Simulator – Android Apps on Google Play". google.com.
+ "F-Droid". f-droid.org.
+ Andy Carlson, Enigma Applet (Standalone Version)
+ John Gilbert, Minarke – A Terminal Friendly Enigma Emulator
+ Russell Schwager, Enigma Simulator Russell Schwager Enigma Simulator
+ PA3DBJ G-312, Enigma Simulator
+ Daniel Palloks,Universal Enigma
+ Summerside Makerspace,Universal Enigma Machine Simulator
+ Terry Long, Enigma Simulator
+ Paul Reuvers, Enigma Simulator for RISC OS
+ Dirk Rijmenants, Enigma Simulator v7.0
+ Frode Weierud Enigma Simulators
+ Alexander Pukall, Enigma Simulator
+ CrypTool 2 Team, CrypTool 2 website
+ Enigma machine on IMDb
+ Laurence Peter (20 July 2009). "How Poles cracked Nazi Enigma secret". BBC News.
+Bibliography
+Bauer, F. L. (2000). Decrypted Secrets (2nd ed.). Springer. ISBN 3-540-66871-3.
+Hamer, David H.; Sullivan, Geoff; Weierud, Frode (July 1998). "Enigma Variations: An Extended Family of Machines" (PDF). Cryptologia. Abingdon: Taylor & Francis. XXII (3). doi:10.1080/0161-119891886885. ISSN 0161-1194. Retrieved 18 February 2016.
+Stripp, Alan (1993). Hinsley, F. H.; Stripp, Alan, eds. The Enigma Machine: Its Mechanism and Use. Codebreakers: The Inside Story of Bletchley Park.
+Kahn, David (1991). Seizing the Enigma: The Race to Break the German U-Boats Codes, 1939–1943. ISBN 0-395-42739-8.
+Kozaczuk, Władysław (1984). Kasparek, Christopher, ed. Enigma: How the German Machine Cipher Was Broken, and How It Was Read by the Allies in World War Two. Frederick, MD: University Publications of America. ISBN 0-89093-547-5.
+Kozaczuk, Władysław. "The origins of the Enigma/ULTRA". Archived from the original on 17 July 2003.
+Kruh, L.; Deavours, C. (2002). "The Commercial Enigma: Beginnings of Machine Cryptography". Cryptologia. 26: 1–16. doi:10.1080/0161-110291890731.
+Marks, Philip; Weierud, Frode (2000). "Recovering the Wiring of Enigma's Umkehrwalze A" (PDF). Cryptologia. 24 (1): 55–66. doi:10.1080/0161-110091888781. Archived from the original (PDF) on 13 February 2012.
+Rejewski, Marian (1980). "An Application of the Theory of Permutations in Breaking the Enigma Cipher". Applicationes mathematicae. 16 (4). ISSN 1730-6280.
+Smith, Michael (2000). Station X: The Codebreakers of Bletchley Park. Pan. ISBN 0-7522-7148-2.
+Smith, Michael (2006). "How it began: Bletchley Park Goes to War". In Copeland, B Jack. Colossus: The Secrets of Bletchley Park's Codebreaking Computers. Oxford: Oxford University Press. ISBN 978-0-19-284055-4.
+Ulbricht, Heinz (2005). "Die Chiffriermaschine Enigma — Trügerische Sicherheit: Ein Beitrag zur Geschichte der Nachrichtendienste" [The Enigma Cipher Machine — Deceptive Security: A contribution to the history of intelligence services] (PDF). PhD Thesis (in German).
+Further reading
+Aldrich, Richard James (2010). GCHQ: The Uncensored Story of Britain's Most Secret Intelligence Agency. HarperPress. ISBN 978-0-00-727847-3.
+Bertrand, Gustave (1973). Enigma: ou, La plus grande énigme de la guerre 1939–1945. Plon.
+Calvocoressi, Peter (2001). Top Secret Ultra. M & M Baldwin. pp. 98–103. ISBN 978-0-947712-41-9.
+Grime, James. "Enigma – 158,962,555,217,826,360,000". Numberphile. Brady Haran.
+Grime, James. "The Enigma Flaw". Numberphile. Brady Haran.
+Heath, Nick, Hacking the Nazis: The secret story of the women who broke Hitler's codes TechRepublic, 27 March 2015
+Herivel, John (2008). Herivelismus: And the German Military Enigma. M & M Baldwin.
+Huttenhain, Orr; Fricke (1945), OKW/Chi Cryptanalytic Research on Enigma, Hagelin and Cipher Teleprinter Messages, TICOM
+Keen, John (1 August 2012). Harold 'Doc' Keen and the Bletchley Park Bombe. M & M Baldwin. ISBN 978-0-947712-48-8.
+Large, Christine (6 October 2003). Hijacking Enigma: The Insider's Tale. Wiley. ISBN 978-0-470-86346-6.
+Marks, Philip. "Umkehrwalze D: Enigma's Rewirable Reflector—Part I", Cryptologia 25(2), April 2001, pp. 101–141.
+Marks, Philip. "Umkehrwalze D: Enigma's Rewirable Reflector—Part II", Cryptologia 25(3), July 2001, pp. 177–212.
+Marks, Philip. "Umkehrwalze D: Enigma's Rewirable Reflector—Part III", Cryptologia 25(4), October 2001, pp. 296–310.
+Paillole, Paul (1985). Notre espion chez Hitler [Our Spy with Hitler] (in French). Robert Laffont.
+Perera, Tom (2010). Inside ENIGMA. Bedford, UK: Radio Society of Great Britain. ISBN 978-1-905086-64-1.
+Perera, Tom. The Story of the ENIGMA: History, Technology and Deciphering, 2nd Edition, CD-ROM, 2004, Artifax Books, ISBN 1-890024-06-6 sample pages
+Rebecca Ratcliffe: Searching for Security. The German Investigations into Enigma's security. In: Intelligence and National Security 14 (1999) Issue 1 (Special Issue) S. 146–167.
+Ratcliffe, Rebecca (1 January 2005). Winkel, Brian J., ed. How Statistics led the Germans to believe Enigma Secure and Why They Were Wrong: neglecting the practical Mathematics of Cipher machines. The German Enigma Cipher Machine: Beginnings, Success, and Ultimate Failure. Artech House. ISBN 978-1-58053-996-8.
+Rejewski, Marian. [1] How Polish Mathematicians Deciphered the Enigma", Annals of the History of Computing 3, 1981. This article is regarded by Andrew Hodges, Alan Turing's biographer, as "the definitive account" (see Hodges' Alan Turing: The Enigma, Walker and Company, 2000 paperback edition, p. 548, footnote 4.5).
+Quirantes, Arturo (April 2004). "Model Z: A Numbers-Only Enigma Version". Cryptologia. 28 (2): 153–156. doi:10.1080/0161-110491892845.
+Sebag-Montefiore, Hugh (2011). Enigma: The Battle For The Code. Orion. ISBN 978-1-78022-123-6.
+Ulbricht, Heinz. Enigma Uhr, Cryptologia, 23(3), April 1999, pp. 194–205.
+Welchman, Gordon (1982). The Hut Six Story: Breaking the Enigma Codes. McGraw-Hill. ISBN 978-0-07-069180-3.
+Winterbotham, F. W. (1999). The Ultra Secret. Weidenfeld & Nicolson. ISBN 978-0-297-64405-7.
+External links
+	Wikimedia Commons has media related to Enigma machine.
+Gordon Corera, Poland's overlooked Enigma codebreakers, BBC News Magazine, 4 July 2014
+Long-running list of places to visit a unit in the real world
+Bletchley Park National Code Centre Home of the British codebreakers during the Second World War
+Enigma machines on the Crypto Museum website
+Pictures of a four-rotor naval enigma, including Flash (SWF) views of the machine
+Enigma Pictures and Demonstration by NSA Employee at RSA
+Enigma machine at Curlie (based on DMOZ)
+Kenngruppenheft
+Process of building an Enigma M4 replica
+Breaking German Navy Ciphers
+An online Enigma Machine simulator
+Enigma simulation
+Universal Enigma simulator
+Public Enigma Simulator – Java simulator, including 13 Enigma machine variations
+vte
+Classical cryptography
+Ciphers
+by family	
+Caesar	
+Affine (Atbash) ROT13
+One time pad	
+Book One-time pad
+Polybius square	
+ADFGVX Bifid Tap code 3D (Trifid: Nihilist and VIC cipher)
+Square	
+Two-square Four-square
+Substitution cipher	
+Autokey Chaocipher Dvorak Great Hill Keyword Running key
+Transposition cipher	
+Rail fence cipher
+Other	
+Alberti BATCO (Slidex) Beaufort Enigma Kama Sutra Navajo code Null Pigpen Playfair Polyalphabetic Rasterschlüssel 44 Reihenschieber Reservehandverfahren Scytale Smithy code Solitaire Straddling checkerboard Tabula recta Transposition Trithemius Vigenère
+Cryptanalysis	
+Frequency analysis Index of coincidence (Units: Ban and Nat) Information leakage Kasiski examination
+Miscellaneous	
+Cryptogram Bacon Scytale
+vte
+Cryptography
+vte
+Cipher machines
+Rotor machines	
+CCM Enigma M-125 Fialka Hebern HX-63 KL-7 Lacida M-325 Mercury NEMA OMI Portex RED SIGABA SIGCUM Singlet Typex
+Mechanical	
+Bazeries cylinder C-36 C-52 CD-57 Cipher disk HC-9 Kryha Jefferson disk M-94 M-209 Reihenschieber Scytale
+Teleprinter	
+5-UCO BID 770 DUDEK KW-26 KW-37 Lorenz SZ 40/42 Siemens and Halske T52
+Secure voice	
+BID 150 FASCINATOR KY-3 KY-57 KY-58 KY-68 NESTOR OMNI SCIP Sectéra Secure Module SIGSALY STE STU-II STU-III VINSON
+Other	
+JADE KG-84 KL-43 KL-51 Noreen Red Purple Pinwheel Rockex
+In Computer Hardware	
+AES instruction set Intel SHA extensions IBM 4758 IBM 4764
+vte
+Cryptography
+Authority control Edit this at Wikidata	
+GND: 4209290-5 LCCN: sh00004694
+Categories: Products introduced in 1918Broken stream ciphersCryptographic hardwareCryptographyRotor machinesSignals intelligence of World War IIWorld War II military equipment of GermanyEncryption devicesEnigma machineMilitary communications of Germany
+Navigation menu
+Not logged inTalkContributionsCreate accountLog inArticleTalkReadEditView historySearch
+
+Search Wikipedia
+Main page
+Contents
+Featured content
+Current events
+Random article
+Donate to Wikipedia
+Wikipedia store
+Interaction
+Help
+About Wikipedia
+Community portal
+Recent changes
+Contact page
+Tools
+What links here
+Related changes
+Upload file
+Special pages
+Permanent link
+Page information
+Wikidata item
+Cite this page
+Print/export
+Create a book
+Download as PDF
+Printable version
+In other projects
+Wikimedia Commons
+
+Languages
+Български
+Deutsch
+हिन्दी
+Magyar
+Nederlands
+Polski
+Română
+Slovenčina
+اردو
+43 more
+Edit links
+This page was last edited on 25 September 2018, at 07:53 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile viewWikimedia Foundation Powered by MediaWiki
+
+
+ This is a good article. Follow the link for more information.
+Alan Turing
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+"Turing" redirects here. For other uses, see Turing (disambiguation).
+Alan Turing
+OBE FRS
+Alan Turing Aged 16.jpg
+Turing aged 16
+Born	23 June 1912
+Maida Vale, London, England
+Died	7 June 1954 (aged 41)
+Wilmslow, Cheshire, England
+Cause of death	Cyanide poisoning
+Resting place	Ashes scattered near Woking Crematorium[1]
+Residence	Wilmslow, Cheshire, England
+Education	Sherborne School[2]
+Alma mater	
+King's College, Cambridge, (BA)
+Princeton University (PhD)
+Known for	
+Cryptanalysis of the Enigma
+Turing's proof
+Turing machine
+Turing test
+Unorganised machine
+LU decomposition
+Awards	Smith's Prize (1936)
+Scientific career
+Fields	
+Logic
+Mathematics
+Cryptanalysis
+Computer science
+Mathematical and theoretical biology[3]
+Institutions	
+University of Manchester
+Government Code and Cypher School
+National Physical Laboratory
+Thesis	Systems of Logic Based on Ordinals (1938)
+Doctoral advisor	Alonzo Church[4]
+Doctoral students	Robin Gandy[4][5]
+Influences	Max Newman[6]
+Signature
+Alan Turing signature.svg
+Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst, philosopher, and theoretical biologist.[2] Turing was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.[7][8][9] Turing is widely considered to be the father of theoretical computer science and artificial intelligence.[10] However, he was also a tragic figure: a hero who was never fully recognized in his home country during his lifetime due to his homosexuality, which was then a crime in the UK.
+
+During the Second World War, Turing worked for the Government Code and Cypher School (GC&CS) at Bletchley Park, Britain's codebreaking centre that produced Ultra intelligence. For a time he led Hut 8, the section which was responsible for German naval cryptanalysis. Here he devised a number of techniques for speeding the breaking of German ciphers, including improvements to the pre-war Polish bombe method, an electromechanical machine that could find settings for the Enigma machine. Turing played a pivotal role in cracking intercepted coded messages that enabled the Allies to defeat the Nazis in many crucial engagements, including the Battle of the Atlantic, and in so doing helped win the war.[11][12] Counterfactual history is difficult with respect to the effect Ultra intelligence had on the length of the war,[13] but at the upper end it has been estimated that this work shortened the war in Europe by more than two years and saved over fourteen million lives.[11]
+
+After the war, Turing worked at the National Physical Laboratory, where he designed the ACE, among the first designs for a stored-program computer. In 1948 Turing joined Max Newman's Computing Machine Laboratory at the Victoria University of Manchester, where he helped develop the Manchester computers[14] and became interested in mathematical biology. He wrote a paper on the chemical basis of morphogenesis,[3] and predicted oscillating chemical reactions such as the Belousov–Zhabotinsky reaction, first observed in the 1960s.
+
+Turing was prosecuted in 1952 for homosexual acts, when by the Labouchere Amendment, "gross indecency" was a criminal offence in the UK. He accepted chemical castration treatment, with DES, as an alternative to prison. Turing died in 1954, 16 days before his 42nd birthday, from cyanide poisoning. An inquest determined his death as suicide, but it has been noted that the known evidence is also consistent with accidental poisoning.[15] In 2009, following an Internet campaign, British Prime Minister Gordon Brown made an official public apology on behalf of the British government for "the appalling way he was treated." Queen Elizabeth II granted him a posthumous pardon in 2013.[16][17][18] The Alan Turing law is now an informal term for a 2017 law in the United Kingdom that retroactively pardoned men cautioned or convicted under historical legislation that outlawed homosexual acts.[19]
+
+
+Contents
+1	Early life and education
+1.1	Family
+1.2	School
+1.3	Christopher Morcom
+1.4	University and work on computability
+2	Career and research
+2.1	Cryptanalysis
+2.2	Bombe
+2.3	Hut 8 and the naval Enigma
+2.4	Turingery
+2.5	Delilah
+2.6	Early computers and the Turing test
+2.7	Pattern formation and mathematical biology
+3	Personal life
+3.1	Conviction for indecency
+3.2	Death
+3.3	Government apology and pardon
+4	Awards, honours, and tributes
+4.1	Posthumous tributes
+4.2	Centenary celebrations
+4.3	Portrayal
+5	See also
+6	References
+6.1	Sources
+7	Further reading
+7.1	Articles
+7.2	Books
+8	External links
+Early life and education
+Family
+Turing was born in Maida Vale, London,[2] while his father, Julius Mathison Turing (1873–1947), was on leave from his position with the Indian Civil Service (ICS) at Chhatrapur, then in the Madras Presidency and presently in Odisha state, in British India.[20][21] Turing's father was the son of a clergyman, the Rev. John Robert Turing, from a Scottish family of merchants that had been based in the Netherlands and included a baronet. Turing's mother, Julius' wife, was Ethel Sara Turing (née Stoney 1881–1976),[2] daughter of Edward Waller Stoney, chief engineer of the Madras Railways. The Stoneys were a Protestant Anglo-Irish gentry family from both County Tipperary and County Longford, while Ethel herself had spent much of her childhood in County Clare.[22]
+
+Julius' work with the ICS brought the family to British India, where his grandfather had been a general in the Bengal Army. However, both Julius and Ethel wanted their children to be brought up in Britain, so they moved to Maida Vale,[23] London, where Alan Turing was born on 23 June 1912, as recorded by a blue plaque on the outside of the house of his birth,[24][25] later the Colonnade Hotel.[20][26] Turing had an elder brother, John (the father of Sir John Dermot Turing, 12th Baronet of the Turing baronets).[27]
+
+Turing's father's civil service commission was still active and during Turing's childhood years Turing's parents travelled between Hastings in England[28] and India, leaving their two sons to stay with a retired Army couple. At Hastings, Turing stayed at Baston Lodge, Upper Maze Hill, St Leonards-on-Sea, now marked with a blue plaque.[29] The plaque was unveiled on 23 June 2012, the centenary of Turing's birth.[30]
+
+Very early in life, Turing showed signs of the genius that he was later to display prominently.[31] His parents purchased a house in Guildford in 1927, and Turing lived there during school holidays. The location is also marked with a blue plaque.[32]
+
+School
+Turing's parents enrolled him at St Michael's, a day school at 20 Charles Road, St Leonards-on-Sea, at the age of six. The headmistress recognised his talent early on, as did many of his subsequent teachers.
+
+Between January 1922 and 1926, Turing was educated at Hazelhurst Preparatory School, an independent school in the village of Frant in Sussex (now East Sussex).[33] In 1926, at the age of 13, he went on to Sherborne School, a boarding independent school in the market town of Sherborne in Dorset. The first day of term coincided with the 1926 General Strike in Britain, but he was so determined to attend, that he rode his bicycle unaccompanied 60 miles (97 km) from Southampton to Sherborne, stopping overnight at an inn.[34]
+
+Turing's natural inclination towards mathematics and science did not earn him respect from some of the teachers at Sherborne, whose definition of education placed more emphasis on the classics. His headmaster wrote to his parents: "I hope he will not fall between two stools. If he is to stay at public school, he must aim at becoming educated. If he is to be solely a Scientific Specialist, he is wasting his time at a public school".[35] Despite this, Turing continued to show remarkable ability in the studies he loved, solving advanced problems in 1927 without having studied even elementary calculus. In 1928, aged 16, Turing encountered Albert Einstein's work; not only did he grasp it, but it is possible that he managed to deduce Einstein's questioning of Newton's laws of motion from a text in which this was never made explicit.[36]
+
+Christopher Morcom
+At Sherborne, Turing formed a significant friendship with fellow pupil Christopher Morcom, who has been described as Turing's "first love". Their relationship provided inspiration in Turing's future endeavours, but it was cut short by Morcom's death, in February 1930, from complications of bovine tuberculosis, contracted after drinking infected cow's milk some years previously.[37][38][39]
+
+The event caused Turing great sorrow. He coped with his grief by working that much harder on the topics of science and mathematics that he had shared with Morcom. In a letter to Morcom's mother Turing said:
+
+I am sure I could not have found anywhere another companion so brilliant and yet so charming and unconceited. I regarded my interest in my work, and in such things as astronomy (to which he introduced me) as something to be shared with him and I think he felt a little the same about me ... I know I must put as much energy if not as much interest into my work as if he were alive, because that is what he would like me to do.[40]
+
+Some have speculated that Morcom's death was the cause of Turing's atheism and materialism.[41] Apparently, at this point in his life he still believed in such concepts as a spirit, independent of the body and surviving death. In a later letter, also written to Morcom's mother, Turing said:
+
+Personally, I believe that spirit is really eternally connected with matter but certainly not by the same kind of body ... as regards the actual connection between spirit and body I consider that the body [can] hold on to a 'spirit', whilst the body is alive and awake the two are firmly connected. When the body is asleep I cannot guess what happens but when the body dies, the 'mechanism' of the body, holding the spirit is gone and the spirit finds a new body sooner or later, perhaps immediately.[42]
+
+University and work on computability
+After Sherborne, Turing studied as an undergraduate from 1931 to 1934 at King's College, Cambridge,[2] where he was awarded first-class honours in mathematics. In 1935, at the age of 22, he was elected a fellow of King's on the strength of a dissertation in which he proved the central limit theorem.[43] Unknown to the committee, the theorem had already been proven, in 1922, by Jarl Waldemar Lindeberg.[44]
+
+In 1936, Turing published his paper "On Computable Numbers, with an Application to the Entscheidungsproblem" (1936).[45] In this paper, Turing reformulated Kurt Gödel's 1931 results on the limits of proof and computation, replacing Gödel's universal arithmetic-based formal language with the formal and simple hypothetical devices that became known as Turing machines. The Entscheidungsproblem (decision problem) was originally posed by German mathematician David Hilbert in 1928. Turing proved that his "universal computing machine" would be capable of performing any conceivable mathematical computation if it were representable as an algorithm. He went on to prove that there was no solution to the decision problem by first showing that the halting problem for Turing machines is undecidable: It is not possible to decide algorithmically whether a Turing machine will ever halt.
+
+
+King's College, Cambridge, where Turing was a student in 1931 and became a Fellow in 1935. The computer room is named after him.
+Although Turing's proof was published shortly after Alonzo Church's equivalent proof using his lambda calculus,[46] Turing's approach is considerably more accessible and intuitive than Church's.[47] It also included a notion of a 'Universal Machine' (now known as a universal Turing machine), with the idea that such a machine could perform the tasks of any other computation machine (as indeed could Church's lambda calculus). According to the Church–Turing thesis, Turing machines and the lambda calculus are capable of computing anything that is computable. John von Neumann acknowledged that the central concept of the modern computer was due to Turing's paper.[48] To this day, Turing machines are a central object of study in theory of computation.
+
+From September 1936 to July 1938, Turing spent most of his time studying under Church at Princeton University, in the second year as a Jane Eliza Procter Visiting Fellow. In addition to his purely mathematical work, he studied cryptology and also built three of four stages of an electro-mechanical binary multiplier.[49] In June 1938, he obtained his PhD from the Department of Mathematics at Princeton;[50] his dissertation, Systems of Logic Based on Ordinals,[51][52] introduced the concept of ordinal logic and the notion of relative computing, where Turing machines are augmented with so-called oracles, allowing the study of problems that cannot be solved by Turing machines. John von Neumann wanted to hire him as his postdoctoral assistant, but he went back to England.[53]
+
+Career and research
+When Turing returned to Cambridge, he attended lectures given in 1939 by Ludwig Wittgenstein about the foundations of mathematics.[54] The lectures have been reconstructed verbatim, including interjections from Turing and other students, from students' notes.[55] Turing and Wittgenstein argued and disagreed, with Turing defending formalism and Wittgenstein propounding his view that mathematics does not discover any absolute truths, but rather invents them.[56]
+
+Cryptanalysis
+During the Second World War, Turing was a leading participant in the breaking of German ciphers at Bletchley Park. The historian and wartime codebreaker Asa Briggs has said, "You needed exceptional talent, you needed genius at Bletchley and Turing's was that genius."[57] From September 1938, Turing had been working part-time with the GC&CS, the British codebreaking organisation. He concentrated on cryptanalysis of the Enigma with Dilly Knox, a senior GC&CS codebreaker.[58] Soon after the July 1939 Warsaw meeting at which the Polish Cipher Bureau had provided the British and French with the details of the wiring of Enigma rotors and their method of decrypting Enigma code messages, Turing and Knox started to work on a less fragile approach to the problem.[59] The Polish method relied on an insecure indicator procedure that the Germans were likely to change, which they did in May 1940. Turing's approach was more general, using crib-based decryption for which he produced the functional specification of the bombe (an improvement of the Polish Bomba).[60]
+
+
+Two cottages in the stable yard at Bletchley Park. Turing worked here in 1939 and 1940, before moving to Hut 8.
+On 4 September 1939, the day after the UK declared war on Germany, Turing reported to Bletchley Park, the wartime station of GC&CS.[61] Specifying the bombe was the first of five major cryptanalytical advances that Turing made during the war. The others were: deducing the indicator procedure used by the German navy; developing a statistical procedure for making much more efficient use of the bombes dubbed Banburismus; developing a procedure for working out the cam settings of the wheels of the Lorenz SZ 40/42 (Tunny) dubbed Turingery and, towards the end of the war, the development of a portable secure voice scrambler at Hanslope Park that was codenamed Delilah.
+
+By using statistical techniques to optimise the trial of different possibilities in the code breaking process, Turing made an innovative contribution to the subject. He wrote two papers discussing mathematical approaches, titled The Applications of Probability to Cryptography[62] and Paper on Statistics of Repetitions,[63] which were of such value to GC&CS and its successor GCHQ that they were not released to the UK National Archives until April 2012, shortly before the centenary of his birth. A GCHQ mathematician, "who identified himself only as Richard," said at the time that the fact that the contents had been restricted for some 70 years demonstrated their importance, and their relevance to post-war cryptanalysis:[64]
+
+[He] said the fact that the contents had been restricted "shows what a tremendous importance it has in the foundations of our subject". ... The papers detailed using "mathematical analysis to try and determine which are the more likely settings so that they can be tried as quickly as possible." ... Richard said that GCHQ had now "squeezed the juice" out of the two papers and was "happy for them to be released into the public domain".
+
+Turing had a reputation for eccentricity at Bletchley Park. He was known to his colleagues as "Prof" and his treatise on Enigma was known as the "Prof's Book".[65] According to historian Ronald Lewin, Jack Good, a cryptanalyst who worked with Turing, said of his colleague:
+
+In the first week of June each year he would get a bad attack of hay fever, and he would cycle to the office wearing a service gas mask to keep the pollen off. His bicycle had a fault: the chain would come off at regular intervals. Instead of having it mended he would count the number of times the pedals went round and would get off the bicycle in time to adjust the chain by hand. Another of his eccentricities is that he chained his mug to the radiator pipes to prevent it being stolen.[66]
+
+While working at Bletchley, Turing, who was a talented long-distance runner, occasionally ran the 40 miles (64 km) to London when he was needed for meetings,[67] and he was capable of world-class marathon standards.[68][69] Turing tried out for the 1948 British Olympic team, hampered by an injury. His tryout time for the marathon was only 11 minutes slower than British silver medallist Thomas Richards' Olympic race time of 2 hours 35 minutes. He was Walton Athletic Club's best runner, a fact discovered when he passed the group while running alone.[70][71][72]
+
+In 1946, Turing was appointed an Officer of the Order of the British Empire (OBE) by King George VI for his wartime services, but his work remained secret for many years.[73][74]
+
+Bombe
+Main article: Bombe
+Within weeks of arriving at Bletchley Park,[61] Turing had specified an electromechanical machine called the bombe, which could break Enigma more effectively than the Polish bomba kryptologiczna, from which its name was derived. The bombe, with an enhancement suggested by mathematician Gordon Welchman, became one of the primary tools, and the major automated one, used to attack Enigma-enciphered messages.[75]
+
+
+A complete and working replica of a bombe now at The National Museum of Computing on Bletchley Park
+The bombe searched for possible correct settings used for an Enigma message (i.e., rotor order, rotor settings and plugboard settings) using a suitable crib: a fragment of probable plaintext. For each possible setting of the rotors (which had on the order of 1019 states, or 1022 states for the four-rotor U-boat variant),[76] the bombe performed a chain of logical deductions based on the crib, implemented electromechanically.[citation needed]
+
+The bombe detected when a contradiction had occurred and ruled out that setting, moving on to the next. Most of the possible settings would cause contradictions and be discarded, leaving only a few to be investigated in detail. A contradiction would occur when an enciphered letter would be turned back into the same plaintext letter, which was impossible with the Enigma. The first bombe was installed on 18 March 1940.[77]
+
+By late 1941, Turing and his fellow cryptanalysts Gordon Welchman, Hugh Alexander and Stuart Milner-Barry were frustrated. Building on the work of the Poles, they had set up a good working system for decrypting Enigma signals, but their limited staff and bombes meant they could not translate all the signals. In the summer, they had considerable success, and shipping losses had fallen to under 100,000 tons a month; however, they badly needed more resources to keep abreast of German adjustments. They had tried to get more people and fund more bombes through the proper channels, but had failed.[78]
+
+On 28 October they wrote directly to Winston Churchill explaining their difficulties, with Turing as the first named. They emphasised how small their need was compared with the vast expenditure of men and money by the forces and compared with the level of assistance they could offer to the forces.[78] As Andrew Hodges, biographer of Turing, later wrote, "This letter had an electric effect."[79] Churchill wrote a memo to General Ismay, which read: "ACTION THIS DAY. Make sure they have all they want on extreme priority and report to me that this has been done." On 18 November, the chief of the secret service reported that every possible measure was being taken.[79] The cryptographers at Bletchley Park did not know of the Prime Minister's response, but as Milner-Barry recalled, "All that we did notice was that almost from that day the rough ways began miraculously to be made smooth."[80] More than two hundred bombes were in operation by the end of the war.[81]
+
+
+Statue of Turing by Stephen Kettle at Bletchley Park, commissioned by Sidney Frank, built from half a million pieces of Welsh slate.[82]
+Hut 8 and the naval Enigma
+Turing decided to tackle the particularly difficult problem of German naval Enigma "because no one else was doing anything about it and I could have it to myself".[83] In December 1939, Turing solved the essential part of the naval indicator system, which was more complex than the indicator systems used by the other services.[83][84]
+
+That same night, he also conceived of the idea of Banburismus, a sequential statistical technique (what Abraham Wald later called sequential analysis) to assist in breaking the naval Enigma, "though I was not sure that it would work in practice, and was not, in fact, sure until some days had actually broken."[83] For this, he invented a measure of weight of evidence that he called the ban. Banburismus could rule out certain sequences of the Enigma rotors, substantially reducing the time needed to test settings on the bombes.[citation needed]
+
+Turing travelled to the United States in November 1942[85] and worked with US Navy cryptanalysts on the naval Enigma and bombe construction in Washington; he also visited their Computing Machine Laboratory in Dayton, Ohio.
+
+Turing's reaction to the American bombe design was far from enthusiastic:
+
+The American Bombe programme was to produce 336 Bombes, one for each wheel order. I used to smile inwardly at the conception of Bombe hut routine implied by this programme, but thought that no particular purpose would be served by pointing out that we would not really use them in that way.
+
+Their test (of commutators) can hardly be considered conclusive as they were not testing for the bounce with electronic stop finding devices. Nobody seems to be told about rods or offiziers or banburismus unless they are really going to do something about it.[86]
+
+During this trip, he also assisted at Bell Labs with the development of secure speech devices.[87] He returned to Bletchley Park in March 1943. During his absence, Hugh Alexander had officially assumed the position of head of Hut 8, although Alexander had been de facto head for some time (Turing having little interest in the day-to-day running of the section). Turing became a general consultant for cryptanalysis at Bletchley Park.[citation needed]
+
+Alexander wrote of Turing's contribution:
+
+There should be no question in anyone's mind that Turing's work was the biggest factor in Hut 8's success. In the early days, he was the only cryptographer who thought the problem worth tackling and not only was he primarily responsible for the main theoretical work within the Hut, but he also shared with Welchman and Keen the chief credit for the invention of the bombe. It is always difficult to say that anyone is 'absolutely indispensable', but if anyone was indispensable to Hut 8, it was Turing. The pioneer's work always tends to be forgotten when experience and routine later make everything seem easy and many of us in Hut 8 felt that the magnitude of Turing's contribution was never fully realised by the outside world.[88]
+
+Turingery
+In July 1942, Turing devised a technique termed Turingery (or jokingly Turingismus)[89] for use against the Lorenz cipher messages produced by the Germans' new Geheimschreiber (secret writer) machine. This was a teleprinter rotor cipher attachment codenamed Tunny at Bletchley Park. Turingery was a method of wheel-breaking, i.e., a procedure for working out the cam settings of Tunny's wheels.[90] He also introduced the Tunny team to Tommy Flowers who, under the guidance of Max Newman, went on to build the Colossus computer, the world's first programmable digital electronic computer, which replaced a simpler prior machine (the Heath Robinson), and whose superior speed allowed the statistical decryption techniques to be applied usefully to the messages.[91] Some have mistakenly said that Turing was a key figure in the design of the Colossus computer. Turingery and the statistical approach of Banburismus undoubtedly fed into the thinking about cryptanalysis of the Lorenz cipher,[92][93] but he was not directly involved in the Colossus development.[94]
+
+Delilah
+Following his work at Bell Labs in the US,[95] Turing pursued the idea of electronic enciphering of speech in the telephone system, and in the latter part of the war, he moved to work for the Secret Service's Radio Security Service (later HMGCC) at Hanslope Park. There he further developed his knowledge of electronics with the assistance of engineer Donald Bayley. Together they undertook the design and construction of a portable secure voice communications machine codenamed Delilah.[96] It was intended for different applications, lacking capability for use with long-distance radio transmissions, and in any case, Delilah was completed too late to be used during the war. Though the system worked fully, with Turing demonstrating it to officials by encrypting and decrypting a recording of a Winston Churchill speech, Delilah was not adopted for use.[97] Turing also consulted with Bell Labs on the development of SIGSALY, a secure voice system that was used in the later years of the war.
+
+Early computers and the Turing test
+
+Plaque, 78 High Street, Hampton
+Between 1945 and 1947, Turing lived in Hampton, London,[98] while he worked on the design of the ACE (Automatic Computing Engine) at the National Physical Laboratory (NPL). He presented a paper on 19 February 1946, which was the first detailed design of a stored-program computer.[99] Von Neumann's incomplete First Draft of a Report on the EDVAC had predated Turing's paper, but it was much less detailed and, according to John R. Womersley, Superintendent of the NPL Mathematics Division, it "contains a number of ideas which are Dr. Turing's own".[100] Although ACE was a feasible design, the secrecy surrounding the wartime work at Bletchley Park led to delays in starting the project and he became disillusioned. In late 1947 he returned to Cambridge for a sabbatical year during which he produced a seminal work on Intelligent Machinery that was not published in his lifetime.[101] While he was at Cambridge, the Pilot ACE was being built in his absence. It executed its first program on 10 May 1950, and a number of later computers around the world owe much to it, including the English Electric DEUCE and the American Bendix G-15. The full version of Turing's ACE was not built until after his death.[102]
+
+According to the memoirs of the German computer pioneer Heinz Billing from the Max Planck Institute for Physics, published by Genscher, Düsseldorf, there was a meeting between Turing and Konrad Zuse.[103] It took place in Göttingen in 1947. The interrogation had the form of a colloquium. Participants were Womersley, Turing, Porter from England and a few German researchers like Zuse, Walther, and Billing (for more details see Herbert Bruderer, Konrad Zuse und die Schweiz).
+
+Turing was appointed Reader in the Mathematics Department at the Victoria University of Manchester in 1948 and in 1949, became Deputy Director of the Computing Machine Laboratory there, working on software for one of the earliest stored-program computers—the Manchester Mark 1. During this time he continued to do more abstract work in mathematics,[104] and in "Computing Machinery and Intelligence" (Mind, October 1950), Turing addressed the problem of artificial intelligence, and proposed an experiment that became known as the Turing test, an attempt to define a standard for a machine to be called "intelligent". The idea was that a computer could be said to "think" if a human interrogator could not tell it apart, through conversation, from a human being.[105] In the paper, Turing suggested that rather than building a program to simulate the adult mind, it would be better rather to produce a simpler one to simulate a child's mind and then to subject it to a course of education. A reversed form of the Turing test is widely used on the Internet; the CAPTCHA test is intended to determine whether the user is a human or a computer.
+
+In 1948 Turing, working with his former undergraduate colleague, D. G. Champernowne, began writing a chess program for a computer that did not yet exist. By 1950, the program was completed and dubbed the Turbochamp.[106] In 1952, he tried to implement it on a Ferranti Mark 1, but lacking enough power, the computer was unable to execute the program. Instead, Turing "ran" the program by flipping through the pages of the algorithm and carrying out its instructions on a chessboard, taking about half an hour per move. The game was recorded.[107] According to Garry Kasparov, Turing's program "played a recognizable game of chess."[108] The program lost to Turing's colleague Alick Glennie, although it is said that it won a game against Champernowne's wife, Isabel.[109]
+
+His Turing test was a significant, characteristically provocative, and lasting contribution to the debate regarding artificial intelligence, which continues after more than half a century.[110] He also invented the LU decomposition method in 1948,[104] used today for solving matrix equations.[111]
+
+Pattern formation and mathematical biology
+In 1951, when Turing was 39 years old, he turned to mathematical biology, finally publishing his masterpiece "The Chemical Basis of Morphogenesis" in January 1952. He was interested in morphogenesis, the development of patterns and shapes in biological organisms. Among other things, he wanted to understand Fibonacci phyllotaxis, the existence of Fibonacci numbers in plant structures.[112] He suggested that a system of chemicals reacting with each other and diffusing across space, termed a reaction-diffusion system, could account for "the main phenomena of morphogenesis".[113] He used systems of partial differential equations to model catalytic chemical reactions. For example, if a catalyst A is required for a certain chemical reaction to take place, and if the reaction produced more of the catalyst A, then we say that the reaction is autocatalytic, and there is positive feedback that can be modelled by nonlinear differential equations. Turing discovered that patterns could be created if the chemical reaction not only produced catalyst A, but also produced an inhibitor B that slowed down the production of A. If A and B then diffused through the container at different rates, then you could have some regions where A dominated and some where B did. To calculate the extent of this, Turing would have needed a powerful computer, but these were not so freely available in 1951, so he had to use linear approximations to solve the equations by hand. These calculations gave the right qualitative results, and produced, for example, a uniform mixture that oddly enough had regularly spaced fixed red spots. The Russian biochemist Boris Belousov had performed experiments with similar results, but could not get his papers published because of the contemporary prejudice that any such thing violated the second law of thermodynamics. Belousov was not aware of Turing's paper in the Philosophical Transactions of the Royal Society.[114]
+
+Although published before the structure and role of DNA was understood, Turing's work on morphogenesis remains relevant today, and is considered a seminal piece of work in mathematical biology.[115] One of the early applications of Turing's paper was the work by James Murray explaining spots and stripes on the fur of cats, large and small.[116][117][118] Further research in the area suggests that Turing's work can partially explain the growth of "feathers, hair follicles, the branching pattern of lungs, and even the left-right asymmetry that puts the heart on the left side of the chest."[119] In 2012, Sheth, et al. found that in mice, removal of Hox genes causes an increase in the number of digits without an increase in the overall size of the limb, suggesting that Hox genes control digit formation by tuning the wavelength of a Turing-type mechanism.[120] Later papers were not available until Collected Works of A. M. Turing was published in 1992.[121]
+
+Personal life
+In 1941, Turing proposed marriage to Hut 8 colleague Joan Clarke, a fellow mathematician and cryptanalyst, but their engagement was short-lived. After admitting his homosexuality to his fiancée, who was reportedly "unfazed" by the revelation, Turing decided that he could not go through with the marriage.[122]
+
+Conviction for indecency
+In January 1952, Turing, then 39, started a relationship with Arnold Murray, a 19-year-old unemployed man. Turing had met Murray just before Christmas outside the Regal Cinema when walking down Manchester's Oxford Road and invited him to lunch. On 23 January Turing's house was burgled. Murray told Turing that the burglar was an acquaintance of his, and Turing reported the crime to the police. During the investigation he acknowledged a sexual relationship with Murray. Homosexual acts were criminal offences in the United Kingdom at that time,[123] and both men were charged with "gross indecency" under Section 11 of the Criminal Law Amendment Act 1885.[124] Initial committal proceedings for the trial were held on 27 February during which Turing's solicitor "reserved his defence", i.e., did not argue or provide evidence against the allegations.
+
+Later, convinced by the advice of his brother and his own solicitor, Turing entered a plea of guilty.[125] The case, Regina v. Turing and Murray, was brought to trial on 31 March 1952.[126] Turing was convicted and given a choice between imprisonment and probation, which would be conditional on his agreement to undergo hormonal treatment designed to reduce libido. He accepted the option of treatment via injections of what was then called stilboestrol (now known as diethylstilbestrol or DES), a synthetic oestrogen; this treatment was continued for the course of one year. The treatment rendered Turing impotent and caused gynaecomastia,[127] fulfilling in the literal sense Turing's prediction that "no doubt I shall emerge from it all a different man, but quite who I've not found out".[128][129] Murray was given a conditional discharge.[130]
+
+Turing's conviction led to the removal of his security clearance and barred him from continuing with his cryptographic consultancy for the Government Communications Headquarters (GCHQ), the British signals intelligence agency that had evolved from GC&CS in 1946, though he kept his academic job. He was denied entry into the United States after his conviction in 1952, but was free to visit other European countries. Turing was never accused of espionage but, in common with all who had worked at Bletchley Park, he was prevented by the Official Secrets Act from discussing his war work.[131]
+
+Death
+
+Woking Crematorium in 2018
+On 8 June 1954, Turing's housekeeper found him dead. He had died the previous day. A post-mortem examination established that the cause of death was cyanide poisoning.[132] When his body was discovered, an apple lay half-eaten beside his bed, and although the apple was not tested for cyanide,[133] it was speculated that this was the means by which a fatal dose was consumed. An inquest determined that he had committed suicide, and he was cremated at Woking Crematorium on 12 June 1954.[134] Turing's ashes were scattered there, just as his father's had been. Andrew Hodges and another biographer, David Leavitt, have both suggested that Turing was re-enacting a scene from the Walt Disney film Snow White and the Seven Dwarfs (1937), his favourite fairy tale, both noting that (in Leavitt's words) he took "an especially keen pleasure in the scene where the Wicked Queen immerses her apple in the poisonous brew."[135]
+
+Philosophy professor Jack Copeland has questioned various aspects of the coroner's historical verdict. He suggests an alternative explanation for the cause of Turing's death, this being the accidental inhalation of cyanide fumes from an apparatus for electroplating gold onto spoons, which uses potassium cyanide to dissolve the gold. Turing had such an apparatus set up in his tiny spare room. Copeland notes that the autopsy findings were more consistent with inhalation than with ingestion of the poison. Turing also habitually ate an apple before bed, and it was not unusual for it to be discarded half-eaten.[136] In addition, Turing had reportedly borne his legal setbacks and hormone treatment (which had been discontinued a year previously) "with good humour" and had shown no sign of despondency prior to his death, even setting down a list of tasks he intended to complete upon return to his office after the holiday weekend.[136] Turing's mother believed that the ingestion was accidental, resulting from her son's careless storage of laboratory chemicals.[137] Biographer Andrew Hodges suggests Turing arranged the delivery of the equipment to deliberately allow his mother plausible deniability regarding any suicide claims.[138]
+
+
+Turing's OBE currently held in Sherborne School archives
+Government apology and pardon
+In August 2009, British programmer John Graham-Cumming started a petition urging the British government to apologise for Turing's prosecution as a homosexual.[139][140] The petition received more than 30,000 signatures.[141][142] The Prime Minister, Gordon Brown, acknowledged the petition, releasing a statement on 10 September 2009 apologising and describing the treatment of Turing as "appalling":[141][143]
+
+Thousands of people have come together to demand justice for Alan Turing and recognition of the appalling way he was treated. While Turing was dealt with under the law of the time and we can't put the clock back, his treatment was of course utterly unfair and I am pleased to have the chance to say how deeply sorry I and we all are for what happened to him ... So on behalf of the British government, and all those who live freely thanks to Alan's work I am very proud to say: we're sorry, you deserved so much better.[141][144]
+
+In December 2011, William Jones created an e-petition[145] requesting that the British government pardon Turing for his conviction of "gross indecency":[146]
+
+We ask the HM Government to grant a pardon to Alan Turing for the conviction of "gross indecency". In 1952, he was convicted of "gross indecency" with another man and was forced to undergo so-called "organo-therapy"—chemical castration. Two years later, he killed himself with cyanide, aged just 41. Alan Turing was driven to a terrible despair and early death by the nation he'd done so much to save. This remains a shame on the British government and British history. A pardon can go some way to healing this damage. It may act as an apology to many of the other gay men, not as well-known as Alan Turing, who were subjected to these laws.[145]
+
+The petition gathered over 37,000 signatures,[18][145] and was supported by Manchester MP John Leech but the request was discouraged by Justice Minister Lord McNally, who said:[147]
+
+A posthumous pardon was not considered appropriate as Alan Turing was properly convicted of what at the time was a criminal offence. He would have known that his offence was against the law and that he would be prosecuted. It is tragic that Alan Turing was convicted of an offence that now seems both cruel and absurd—particularly poignant given his outstanding contribution to the war effort. However, the law at the time required a prosecution and, as such, long-standing policy has been to accept that such convictions took place and, rather than trying to alter the historical context and to put right what cannot be put right, ensure instead that we never again return to those times.[148]
+
+John Leech, the MP for Manchester Withington (2005–15), submitted several bills to Parliament[149] and campaigned with Jones to secure the pardon. Leech made the case in the House of Commons that Turing's contribution to the war made him a national hero and that it was "ultimately just embarrassing" that the conviction still stood.[150] Leech continued to take the bill through Parliament and campaigned for several years until it was passed.[151]
+
+At the UK premiere of a film based on Turing's life, The Imitation Game, the producers thanked Leech for bringing the topic to public attention and securing Turing's pardon. [152] His campaign turned to acquiring pardons for the 75,000 other men convicted of the same crime. Leech's campaign gained public support from popular physicists such as Stephen Hawking.[153]
+
+On 26 July 2012, a bill was introduced in the House of Lords to grant a statutory pardon to Turing for offences under section 11 of the Criminal Law Amendment Act 1885, of which he was convicted on 31 March 1952.[154] Late in the year in a letter to The Daily Telegraph, the physicist Stephen Hawking and 10 other signatories including the Astronomer Royal Lord Rees, President of the Royal Society Sir Paul Nurse, Lady Trumpington (who worked for Turing during the war) and Lord Sharkey (the bill's sponsor) called on Prime Minister David Cameron to act on the pardon request.[155] The government indicated it would support the bill,[156][157][158] and it passed its third reading in the Lords in October.[159]
+
+At the bill's second reading in the House of Commons on 29 November 2013, Conservative MP Chrstopher Chope objected to the bill, delaying its passage. The bill was due to return to the House of Commons on 28 February 2014,[160] but before the bill could be debated in the House of Commons,[161] the government elected to proceed under the royal prerogative of mercy. On 24 December 2013, Queen Elizabeth II signed a pardon for Turing's conviction for "gross indecency", with immediate effect.[17] Announcing the pardon, Justice Secretary Chris Grayling said Turing deserved to be "remembered and recognised for his fantastic contribution to the war effort" and not for his later criminal conviction.[16][18] The Queen officially pronounced Turing pardoned in August 2014.[162] The Queen's action is only the fourth royal pardon granted since the conclusion of the Second World War.[163] Pardons are normally granted only when the person is technically innocent, and a request has been made by the family or other interested party; neither condition was met in regard to Turing's conviction.[164]
+
+In a letter to the Prime Minister, David Cameron, human rights advocate Peter Tatchell criticised the decision to single out Turing due to his fame and achievements when thousands of others convicted under the same law have not received pardons.[165] Tatchell also called for a new investigation into Turing's death:
+
+A new inquiry is long overdue, even if only to dispel any doubts about the true cause of his death—including speculation that he was murdered by the security services (or others). I think murder by state agents is unlikely. There is no known evidence pointing to any such act. However, it is a major failing that this possibility has never been considered or investigated.[166]
+
+In September 2016, the government announced its intention to expand this retroactive exoneration to other men convicted of similar historical indecency offences, in what was described as an "Alan Turing law".[167][168] The Alan Turing law is now an informal term for the law in the United Kingdom, contained in the Policing and Crime Act 2017, which serves as an amnesty law to retroactively pardon men who were cautioned or convicted under historical legislation that outlawed homosexual acts. The law applies in England and Wales.[169]
+
+Awards, honours, and tributes
+
+The Alan Turing Building at the University of Manchester
+Turing was appointed to the Order of the British Empire 1946.[74] He was also elected a Fellow of the Royal Society (FRS) in 1951.[7] Several things are named in his honour:
+
+Alan Turing Institute
+Church-Turing thesis
+Good–Turing frequency estimation
+Turing completeness
+Turing degree
+Turing fixed-point combinator
+Turing Institute
+Turing Lecture
+Turing machine
+Turing patterns
+Turing reduction
+Turing switch
+Turing test
+Posthumous tributes
+Various institutions have paid tribute to Turing by naming things after him including:
+
+The computer room at King's College, Cambridge, Turing's alma mater, is called the Turing Room.[170]
+The Turing Room at the University of Edinburgh's School of Informatics houses a bust of Turing by Eduardo Paolozzi, and a set (No. 42/50) of his Turing prints (2000).[171]
+The University of Surrey has a statue of Turing on their main piazza[172] and one of the buildings of Faculty of Engineering and Physical Sciences is named after him.[173]
+Istanbul Bilgi University organises an annual conference on the theory of computation called "Turing Days".[174]
+The University of Texas at Austin has an honours computer science programme named the Turing Scholars.[175]
+In the early 1960s, Stanford University named the sole lecture room of the Polya Hall Mathematics building "Alan Turing Auditorium".[176]
+One of the amphitheatres of the Computer Science department (LIFL[177]) at the University of Lille in northern France is named in honour of Alan M. Turing (the other amphitheatre is named after Kurt Gödel).
+The University of Washington has a computer laboratory named after Turing.[178]
+Oxford Brookes University,[179] the University of Manchester, the Open University, the University of Wolverhampton and Aarhus University (in Aarhus, Denmark) all have buildings named after Turing.[citation needed]
+Alan Turing Road in the Surrey Research Park[173] and the Alan Turing Way, part of the Manchester inner ring road. Alan Turing road in Loughborough[180] are named after Turing.
+Carnegie Mellon University has a granite bench, situated in the Hornbostel Mall, with the name "A. M. Turing" carved across the top, "Read" down the left leg, and "Write" down the other.[181]
+The University of Oregon has a bust of Turing on the side of Deschutes Hall, the computer science building.[182]
+The École Polytechnique Fédérale de Lausanne has a road and a square named after Turing (Chemin Alan Turing and Place Alan Turing).[183]
+The Faculty of Informatics and Information Technologies Slovak University of Technology in Bratislava, Slovakia, has a lecture room named "Turing Auditorium".[184]
+The Paris Diderot University has a lecture room named "Amphithéâtre Turing".[185]
+The Faculty of Mathematics and Computer Science at the University of Würzburg has a lecture hall named "Turing Hörsaal".[186]
+The Paul Sabatier University in Toulouse has a lecture room named "Amphithéâtre Turing" (Bâtiment U4).[187]
+The largest conference hall at the Amsterdam Science Park is named Turingzaal.[188]
+King's College London's School of Natural and Mathematical Sciences awards the Alan Turing Centenary Prize.[189]
+The University of Kent named the Turing College after him at their Canterbury campus.[190]
+The campus of the École polytechnique has a building named after Turing; it is a research centre whose premises are shared by the École Polytechnique, the INRIA and Microsoft.[191][citation needed]
+The University of Toronto developed the Turing programming language in 1982, named after Turing.
+The campus of State University of Campinas in Brazil has an avenue, one of its largest, named after Turing.[192]
+The Department of Computer Science at Pontifical Catholic University of Chile, the University of Buenos Aires, the Polytechnic University of Puerto Rico, Los Andes University in Bogotá, Colombia, King's College, Cambridge, Bangor University in Wales, the University of Mons in Belgium, the University of Turin (Università degli Studi di Torino), the University of Puerto Rico at Humacao, Keele University and the Faculty of Computer Science, Electronics and Telecommunications of AGH University of Science and Technology, have buildings named after Turing.[citation needed]
+Ghent University named a computer room after Turing, in their department of Computer Science and Applied Mathematics.[193]
+Nvidia unveiled their line of GeForce Graphics Cards based on the Turing microarchitecture, which in turn was named after Turing. The architecture introduces the first consumer products capable of real-time raytracing, which has been a longstanding goal of the computer graphics industry.
+A biography published by the Royal Society shortly after Turing's death,[7] while his wartime work was still subject to the Official Secrets Act, recorded:
+
+Three remarkable papers written just before the war, on three diverse mathematical subjects, show the quality of the work that might have been produced if he had settled down to work on some big problem at that critical time. For his work at the Foreign Office he was awarded the OBE.[7]
+
+Since 1966, the Turing Award has been given annually by the Association for Computing Machinery for technical or theoretical contributions to the computing community. It is widely considered to be the computing world's highest honour, equivalent to the Nobel Prize.[194]
+
+On 23 June 1998, on what would have been Turing's 86th birthday, his biographer, Andrew Hodges, unveiled an official English Heritage blue plaque at his birthplace and childhood home in Warrington Crescent, London, later the Colonnade Hotel.[195][196] To mark the 50th anniversary of his death, a memorial plaque was unveiled on 7 June 2004 at his former residence, Hollymeade, in Wilmslow, Cheshire.[197]
+
+
+A blue plaque marking Turing's home at Wilmslow, Cheshire
+On 13 March 2000, Saint Vincent and the Grenadines issued a set of postage stamps to celebrate the greatest achievements of the 20th century, one of which carries a portrait of Turing against a background of repeated 0s and 1s, and is captioned: "1937: Alan Turing's theory of digital computing". On 1 April 2003, Turing's work at Bletchley Park was named an IEEE Milestone.[198] On 28 October 2004, a bronze statue of Turing sculpted by John W. Mills was unveiled at the University of Surrey in Guildford, marking the 50th anniversary of Turing's death; it portrays him carrying his books across the campus.[172]
+
+Turing was one of four mathematicians examined in the BBC documentary entitled Dangerous Knowledge (2008).[199] The Princeton Alumni Weekly named Turing the second most significant alumnus in the history of Princeton University, second only to President James Madison. A 1.5-ton, life-size statue of Turing was unveiled on 19 June 2007 at Bletchley Park. Built from approximately half a million pieces of Welsh slate, it was sculpted by Stephen Kettle, having been commissioned by the American billionaire Sidney Frank.[200]
+
+Turing has been honoured in various ways in Manchester, the city where he worked towards the end of his life. In 1994, a stretch of the A6010 road (the Manchester city intermediate ring road) was named "Alan Turing Way". A bridge carrying this road was widened, and carries the name Alan Turing Bridge. A statue of Turing was unveiled in Manchester on 23 June 2001 in Sackville Park, between the University of Manchester building on Whitworth Street and Canal Street. The memorial statue depicts the "father of computer science" sitting on a bench at a central position in the park. Turing is shown holding an apple. The cast bronze bench carries in relief the text 'Alan Mathison Turing 1912–1954', and the motto 'Founder of Computer Science' as it could appear if encoded by an Enigma machine: 'IEKYF ROMSI ADXUO KVKZC GUBJ'. However, the meaning of the coded message is disputed, as the 'u' in 'computer' matches up with the 'u' in 'ADXUO'. As a letter encoded by an enigma machine can not appear as itself, the actual message behind the code is uncertain.[201]
+
+
+Turing memorial statue plaque in Sackville Park, Manchester
+A plaque at the statue's feet reads 'Father of computer science, mathematician, logician, wartime codebreaker, victim of prejudice'. There is also a Bertrand Russell quotation: "Mathematics, rightly viewed, possesses not only truth, but supreme beauty—a beauty cold and austere, like that of sculpture." The sculptor buried his own old Amstrad computer under the plinth as a tribute to "the godfather of all modern computers".[202]
+
+In 1999, Time magazine named Turing as one of the 100 Most Important People of the 20th century and stated, "The fact remains that everyone who taps at a keyboard, opening a spreadsheet or a word-processing program, is working on an incarnation of a Turing machine."[8]
+
+In 2002, Turing was ranked twenty-first on the BBC's poll of the 100 Greatest Britons following a UK-wide vote.[203] In 2006, British writer and mathematician Ioan James chose Turing as one of twenty people to feature in his book about famous historical figures who may have had some of the traits of Asperger syndrome.[204] In 2010, actor/playwright Jade Esteban Estrada portrayed Turing in the solo musical, ICONS: The Lesbian and Gay History of the World, Vol. 4. In 2011, in The Guardian's "My hero" series, writer Alan Garner chose Turing as his hero and described how they had met while out jogging in the early 1950s. Garner remembered Turing as "funny and witty" and said that he "talked endlessly".[205] In 2006, Turing was named with online resources as an LGBT History Month Icon.[206] In 2006, Boston Pride named Turing their Honorary Grand Marshal.[207]
+
+
+Turing memorial statue in Sackville Park, Manchester
+The logo of Apple Inc. is often erroneously referred to as a tribute to Turing, with the bite mark a reference to his death.[208] Both the designer of the logo[209] and the company deny that there is any homage to Turing in the design.[210][211] Stephen Fry has recounted asking Steve Jobs whether the design was intentional, saying that Jobs' response was, "God, we wish it were."[212] In February 2011, Turing's papers from the Second World War were bought for the nation with an 11th-hour bid by the National Heritage Memorial Fund, allowing them to stay at Bletchley Park.[213]
+
+In 2012, Turing was inducted into the Legacy Walk, an outdoor public display that celebrates LGBT history and people.[214][215]
+
+The song "Alan et la Pomme", by francophone singer-songwriter Salvatore Adamo, is a tribute to Turing.[216] Turing's life and work featured in a BBC children's programme about famous scientists,Absolute Genius with Dick and Dom, first broadcast on 12 March 2014.
+
+On 17 May 2014, the world's first work of public art to recognise Turing as gay was commissioned in Bletchley, close by to Bletchley Park where his war-time work was carried out. The commission was announced to mark International Day Against Homophobia and Transphobia. The work was unveiled at a ceremony on Turing's birthday, 23 June 2014, and is placed alongside busy Watling Street, the old main road to London, where Turing himself would have passed by on many occasions. On 22 October 2014, Turing was inducted into the NSA Hall of Honor.[217][218]
+
+Centenary celebrations
+Main article: Alan Turing Year
+
+David Chalmers on stage for an Alan Turing Year conference at De La Salle University, Manila, 27 March 2012
+To mark the 100th anniversary of Turing's birth, the Turing Centenary Advisory Committee (TCAC) co-ordinated the Alan Turing Year, a year-long programme of events around the world honouring Turing's life and achievements. The TCAC, chaired by S. Barry Cooper with Turing's nephew Sir John Dermot Turing acting as Honorary President, worked with the University of Manchester faculty members and a broad spectrum of people from Cambridge University and Bletchley Park.
+
+On 23 June 2012, Google featured an interactive doodle where visitors had to change the instructions of a Turing Machine, so when run, the symbols on the tape would match a provided sequence, featuring "Google" in Baudot-Murray code.[219]
+
+The Bletchley Park Trust collaborated with Winning Moves to publish an Alan Turing edition of the board game Monopoly. The game's squares and cards have been revised to tell the story of Turing's life, from his birthplace in Maida Vale to Hut 8 at Bletchley Park.[220] The game also includes a replica of an original hand-drawn board created by William Newman, son of Turing's mentor, Max Newman, which Turing played on in the 1950s.[221]
+
+In the Philippines, the Department of Philosophy at De La Salle University-Manila hosted Turing 2012, an international conference on philosophy, artificial intelligence, and cognitive science from 27 to 28 March 2012 to commemorate the centenary birth of Turing.[222][223] Madurai, India held celebrations with a programme attended by 6,000 students.[224]
+
+
+The London 2012 Olympic Torch flame was passed on in front of Turing's statue in Manchester on his 100th birthday.
+There was a three-day conference in Manchester in June, the Alan Turing Centenary Conference, a two-day conference in San Francisco, organised by the ACM, and a birthday party and Turing Centenary Conference in Cambridge organised at King's College, Cambridge, and the University of Cambridge, the latter organised by the association Computability in Europe.[225]
+
+The Science Museum in London launched a free exhibition devoted to Turing's life and achievements in June 2012, to run until July 2013.[226] In February 2012, the Royal Mail issued a stamp featuring Turing as part of its "Britons of Distinction" series.[227] The London 2012 Olympic Torch flame was passed on in front of Turing's statue in Sackville Gardens, Manchester, on the evening of 23 June 2012, the 100th anniversary of his birth.
+
+On 22 June 2012 Manchester City Council, in partnership with the Lesbian and Gay Foundation, launched the Alan Turing Memorial Award, which will recognise individuals or groups who have made a significant contribution to the fight against homophobia in Manchester.[228]
+
+At the University of Oxford, a new course in Computer Science and Philosophy was established to coincide with the centenary of Turing's birth.[229]
+
+Previous events have included a celebration of Turing's life and achievements, at the University of Manchester, arranged by the British Logic Colloquium and the British Society for the History of Mathematics on 5 June 2004.[230]
+
+Portrayal
+In theatre
+
+Benedict Cumberbatch portrayed Turing in the 2014 film The Imitation Game
+Breaking the Code is a 1986 play by Hugh Whitemore about Turing. The play ran in London's West End beginning in November 1986 and on Broadway from 15 November 1987 to 10 April 1988. In these performances Turing was played by Derek Jacobi. The Broadway production was nominated for three Tony Awards including Best Actor in a Play, Best Featured Actor in a Play, and Best Direction of a Play, and for two Drama Desk Awards, for Best Actor and Best Featured Actor. Turing was again portrayed by Jacobi in the 1996 television film adaptation of Breaking the Code.[231]
+In 2012, in honour of the Turing Centennial, American Lyric Theater commissioned an operatic exploration of the life and death of Turing from composer Justine F. Chen and librettist David Simpatico.[232] Titled The Life and Death(s) of Alan Turing, the opera is a historical fantasia on the life of Turing. In November 2014, the opera and several other artistic works inspired by Turing's life were featured on Studio 360.[233] The opera received its first public performance in January 2017.[234]
+In literature
+In William Gibson's Neuromancer the Turing police have jurisdiction over AIs. (1984)[235]
+Turing is featured in the Neal Stephenson novel Cryptonomicon (1999).[236]
+The 2000 Doctor Who novel The Turing Test features Turing and the writer Graham Greene.[237]
+The 2006 novel A Madman Dreams of Turing Machines contrasts fictionalised accounts of the lives and ideas of Turing and Kurt Gödel.[238]
+The 2015 novel Speak, written by Louisa Hall, includes a series of fictional letters written from Turing to his best friend's mother throughout his life, detailing his research about artificial intelligence.[239][240]
+In the graphic novel series Über, in which a fictionalised version of WWII plays out involving superhuman soldiers called "Tank-Men", Turing is one of the researchers as well as a Tank-Man himself.[241]
+In music
+Electronic music duo Matmos released an EP titled For Alan Turing in 2006, which was based on material commissioned by Dr. Robert Osserman and David Elsenbud of the Mathematical Sciences Research Institute.[242] In one of its tracks, an original Enigma Machine is sampled.[243]
+In 2012, Spanish group Hidrogenesse dedicated their LP Un dígito binario dudoso. Recital para Alan Turing (A dubious binary digit. Concert for Alan Turing) to the memory of the mathematician.[244]
+A musical work inspired by Turing's life, written by Neil Tennant and Chris Lowe of the Pet Shop Boys, entitled A Man from the Future, was announced in late 2013.[245] It was performed by the Pet Shop Boys and Juliet Stevenson (narrator), the BBC Singers, and the BBC Concert Orchestra conducted by Dominic Wheeler at the BBC Proms in the Royal Albert Hall on 23 July 2014.[246]
+Codebreaker is also the title of a choral work by the composer James McCarthy. It includes settings of texts by the poets Wilfred Owen, Sara Teasdale, Walt Whitman, Oscar Wilde and Robert Burns that are used to illustrate aspects of Turing's life. It was premiered on 26 April 2014 at the Barbican Centre in London, where it was performed by the Hertfordshire Chorus, who commissioned the work, led by David Temple with the soprano soloist Naomi Harvey providing the voice of Turing's mother.[247][248]
+In film
+The historical drama film The Imitation Game, directed by Morten Tyldum and starring Benedict Cumberbatch as Turing and Keira Knightley as Joan Clarke, was released in the UK on 14 November 2014 and released theatrically in the US on 28 November 2014. It is about Turing breaking the Enigma code with other codebreakers in Bletchley Park.[249][250][251][252]
+Codebreaker, original UK title Britain's Greatest Codebreaker, is a TV film aired on 21 November 2011 by Channel 4 about Turing's life. It had a limited release in the US beginning on 17 October 2012. The story is told as a discussion between Turing and his psychiatrist Dr. Franz Greenbaum. The story is based on journals maintained by Greenbaum and others who have studied Turing's life as well as some of his colleagues.[253]
+See also
+List of things named after Alan Turing
+References
+ Cooper, Prof S. Barry (7 October 2014). "The Imitation Game: how Benedict Cumberbatch brought Turing to life". The Guardian. Guardian News and Media Limited. Retrieved 17 April 2017.
+ Anon (2017). Turing, Alan Mathison. ukwhoswho.com. Who's Who (online Oxford University Press ed.). A & C Black, an imprint of Bloomsbury Publishing plc. doi:10.1093/ww/9780199540884.013.U243891. closed access publication – behind paywall (subscription required)
+ Alan Turing publications indexed by Google Scholar Edit this at Wikidata
+ Alan Turing at the Mathematics Genealogy Project
+ Gandy, Robin Oliver (1953). On axiomatic systems in mathematics and theories in physics. repository.cam.ac.uk (PhD thesis). University of Cambridge. doi:10.17863/CAM.16125. EThOS uk.bl.ethos.590164. Free to read
+ Grattan-Guinness, Ivor, Chapter 40, Turing's mentor, Max Newman. In Copeland, B. Jack; Bowen, Jonathan P.; Wilson, Robin; Sprevak, Mark (2017). The Turing Guide. Oxford University Press. ISBN 978-0198747826.
+ Newman, M. H. A. (1955). "Alan Mathison Turing. 1912–1954" (PDF). Biographical Memoirs of Fellows of the Royal Society. 1: 253–263. doi:10.1098/rsbm.1955.0019. JSTOR 769256.
+ Gray, Paul (29 March 1999). "Alan Turing – Time 100 People of the Century". Time. Providing a blueprint for the electronic digital computer. The fact remains that everyone who taps at a keyboard, opening a spreadsheet or a word-processing program, is working on an incarnation of a Turing machine.
+ Sipser 2006, p. 137
+ Beavers 2013, p. 481
+ Copeland, Jack (18 June 2012). "Alan Turing: The codebreaker who saved 'millions of lives'". BBC News Technology. Retrieved 26 October 2014.
+ A number of sources state that Winston Churchill said that Turing made the single biggest contribution to Allied victory in the war against Nazi Germany. However both The Churchill Centre and Turing's biographer Andrew Hodges have said they know of no documentary evidence to support this claim nor of the date or context in which Churchill supposedly said it, and the Churchill Centre lists it among their Churchill 'Myths', see Schilling, Jonathan. "Churchill Said Turing Made the Single Biggest Contribution to Allied Victory". The Churchill Centre: Myths. Retrieved 9 January 2015. and Hodges, Andrew. "Part 4: The Relay Race". Update to Alan Turing: The Enigma. Retrieved 9 January 2015. A BBC News profile piece that repeated the Churchill claim has subsequently been amended to say there is no evidence for it. See Spencer, Clare (11 September 2009). "Profile: Alan Turing". BBC News. Update 13 February 2015
+ See for example Richelson, Jeffery T. (1997). A Century of Spies: Intelligence in the Twentieth Century. New York: Oxford University Press. p. 296. and Hartcup, Guy (2000). The Effect of Science on the Second World War. Basingstoke, Hampshire: Macmillan Press. pp. 96–99.
+ Leavitt 2007, pp. 231–233
+ Pease, Roland (26 June 2012). "Alan Turing: Inquest's suicide verdict 'not supportable'". BBC News. Retrieved 25 December 2013.
+ "Royal pardon for codebreaker Alan Turing". BBC News. 24 December 2013. Retrieved 24 December 2013.
+ Swinford, Steven (23 December 2013). "Alan Turing granted Royal pardon by the Queen". The Daily Telegraph.
+ Wright, Oliver (23 December 2013). "Alan Turing gets his royal pardon for 'gross indecency' – 61 years after he poisoned himself". The Independent. London.
+ "'Alan Turing law': Thousands of gay men to be pardoned". BBC News. 20 October 2016. Retrieved 20 October 2016.
+ Hodges 1983, p. 5
+ "The Alan Turing Internet Scrapbook". Alan Turing: The Enigma. Retrieved 2 January 2012.
+ Phil Maguire, "An Irishman's Diary", page 5. The Irish Times, 23 June 2012.
+ "London Blue Plaques". English Heritage. Archived from the original on 13 September 2009. Retrieved 10 February 2007.
+ The Scientific Tourist In London: #17 Alan Turing's Birth Place, Nature. London Blog
+ Plaque #381 on Open Plaques.
+ "The Alan Turing Internet Scrapbook". Retrieved 26 September 2006.
+ Sir John Dermot Turing on the Bletchley Park website.
+ Hodges 1983, p. 6
+ "Plaque unveiled at Turing's home in St Leonards". Hastings & St. Leonards Observer. 29 June 2012. Retrieved 3 July 2017.
+ "St Leonards plaque marks Alan Turing's early years". BBC News. 25 June 2012. Retrieved 3 July 2017.
+ Jones, G. James (11 December 2001). "Alan Turing – Towards a Digital Mind: Part 1". System Toolbox. Archived from the original on 3 August 2007. Retrieved 27 July 2007.
+ "Guildford Dragon NEWS". The Guildford Dragon. 29 November 2012. Retrieved 31 October 2013.
+ Alan Mathison (April 2016). "ALAN TURING ARCHIVE – SHERBORNE SCHOOL (ARCHON CODE: GB1949)" (PDF). Sherborne School, Dorset. Retrieved 5 February 2017.
+ Hofstadter, Douglas R. (1985). Metamagical Themas: Questing for the Essence of Mind and Pattern. Basic Books. p. 484. ISBN 0-465-04566-9. OCLC 230812136.
+ Hodges 1983, p. 26
+ Hodges 1983, p. 34
+ Caryl, Christian (19 December 2014). "Poor Imitation of Alan Turing". New York Review of Books.
+ Rachel Hassall, 'The Sherborne Formula: The Making of Alan Turing' 'Vivat!' 2012/13
+ Teuscher, Christof (ed.) (2004). Alan Turing: Life and Legacy of a Great Thinker. Springer-Verlag. ISBN 3-540-20020-7. OCLC 53434737.
+ Hodges 1983, p. 61
+ Paul Gray, Alan Turing Time Magazine's Most Important People of the Century, p. 2
+ Hodges 1983, pp. 82–83
+ See Section 3 of John Aldrich, "England and Continental Probability in the Inter-War Years", Journal Electronique d'Histoire des Probabilités et de la Statistique, vol. 5/2 Decembre 2009 Journal Electronique d'Histoire des Probabilités et de la Statistique
+ Hodges 1983, pp. 88, 94
+ Turing 1937
+ Church 1936
+ Grime, James (February 2012). "What Did Turing Do for Us?". NRICH. University of Cambridge. Retrieved 28 February 2016.
+ "von Neumann ... firmly emphasised to me, and to others I am sure, that the fundamental conception is owing to Turing—insofar as not anticipated by Babbage, Lovelace and others." Letter by Stanley Frankel to Brian Randell, 1972, quoted in Jack Copeland (2004) The Essential Turing, p. 22.
+ Hodges 1983, p. 138
+ Turing, A. M. (1939). "Systems of Logic Based on Ordinals". Proceedings of the London Mathematical Society. s2-45: 161–228. doi:10.1112/plms/s2-45.1.161.
+ Turing, Alan (1938). Systems of Logic Based on Ordinals (PhD thesis). Princeton University. doi:10.1112/plms/s2-45.1.161.
+ Turing, A. M. (1938). "Systems of Logic Based on Ordinals" (PDF).
+ John Von Neumann: The Scientific Genius Who Pioneered the Modern Computer, Game Theory, Nuclear Deterrence, and Much More, Norman MacRae, 1999, American Mathematical Society, Chapter 8
+ Hodges 1983, p. 152
+ Cora Diamond (ed.), Wittgenstein's Lectures on the Foundations of Mathematics, University of Chicago Press, 1976
+ Hodges 1983, pp. 153–154
+ Briggs, Asa (21 November 2011). Britain's Greatest Codebreaker (TV broadcast). UK Channel 4.
+ Copeland, Jack, "Colossus and the Dawning of the Computer Age", p. 352 in Action This Day, 2001.
+ Copeland 2004a, p. 217
+ Clark, Liat (18 June 2012). "Turing's achievements: codebreaking, AI and the birth of computer science (Wired UK)". Wired. Retrieved 31 October 2013.
+ Copeland, 2006 p. 378.
+ Turing, Alan (c. 1941). "The Applications of Probability to Cryptography". The National Archives (United Kingdom): HW 25/37.
+ Turing, Alan (c. 1941). "Paper on Statistics of Repetitions". The National Archives (United Kingdom): HW 25/38.
+ Vallance, Chris (19 April 2012). "Alan Turing papers on code breaking released by GCHQ". BBC News. Retrieved 20 April 2012.
+ Hodges 1983, p. 208
+ Lewin 1978, p. 57
+ Brown, Anthony Cave (1975). Bodyguard of Lies: The Extraordinary True Story Behind D-Day. The Lyons Press. ISBN 978-1-59921-383-5.
+ Graham-Cumming, John (10 March 2010). "An Olympic honour for Alan Turing". The Guardian. London.
+ Butcher, Pat (14 September 2009). "In Praise of Great Men". Globe Runner.
+ Hodges, Andrew. "Alan Turing: a short biography". Alan Turing: The Enigma. Retrieved 12 June 2014.
+ Graham-Cumming, John (10 March 2010). "Alan Turing: a short biography". The Guardian. Retrieved 12 June 2014.
+ Butcher, Pat (December 1999). "Turing as a runner". The MacTutor History of Mathematics archive. Retrieved 12 June 2014.
+ "Alan Turing: Colleagues share their memories". BBC News. 23 June 2012.
+ https://www.thegazette.co.uk/all-notices/content/114
+ Welchman, Gordon (1997) [1982], The Hut Six story: Breaking the Enigma codes, Cleobury Mortimer, England: M&M Baldwin, p. 81, ISBN 9780947712341
+ Professor Jack Good in "The Men Who Cracked Enigma", 2003: with his caveat: "if my memory is correct".
+ Oakley 2006, p. 40/03B
+ Hodges 1983, p. 218
+ Hodges 1983, p. 221
+ Copeland, The Essential Turing, pp. 336–337.
+ Copeland, Jack; Proudfoot, Diane (May 2004). "Alan Turing, Codebreaker and Computer Pioneer". alanturing.net. Retrieved 27 July 2007.
+ "Bletchley Park Unveils Statue Commemorating Alan Turing". Retrieved 30 June 2007.
+ Mahon 1945, p. 14
+ Leavitt 2007, pp. 184–186
+ Hodges 1983, pp. 242–245
+ Turing, Alan M. (2001). "VISIT TO NATIONAL CASH REGISTER CORPORATION OF DAYTON, OHIO". Cryptologia. Taylor & Francis. 25 (1): 1–10. doi:10.1080/0161-110191889734. Retrieved 4 June 2010.
+ Hodges 1983, pp. 245–253
+ Alexander & circa 1945, p. 42
+ Copeland 2006, p. 380
+ Copeland 2006, p. 381
+ Copeland 2006, p. 72
+ Gannon 2007, p. 230
+ Hilton 2006, pp. 197–199
+ Iceland 39920, pp, 982-354
+ Hodges 1983, pp. 245–250
+ Hodges 1983, p. 273
+ Hodges 1983, p. 346
+ Plaque #1619 on Open Plaques.
+ Copeland 2006, p. 108
+ Randell, Brian (1980). "A History of Computing in the Twentieth Century: Colossus" (PDF). Retrieved 27 January 2012. citing Womersley, J. R. (13 February 1946). "'ACE' Machine Project". Executive Committee, National Physical Laboratory, Teddington, Middlesex.
+ See Copeland 2004b, pp. 410–432
+ "Turing at NPL".
+ Bruderer, Herbert. "Did Alan Turing interrogate Konrad Zuse in Göttingen in 1947?" (PDF). Retrieved 7 February 2013.
+ Turing, A. M. (1948). "Rounding-Off Errors in Matrix Processes". The Quarterly Journal of Mechanics and Applied Mathematics. 1: 287–308. doi:10.1093/qjmam/1.1.287.
+ Harnad, Stevan (2008) The Annotation Game: On Turing (1950) on Computing, Machinery and Intelligence. In: Epstein, Robert & Peters, Grace (Eds.) Parsing the Turing Test: Philosophical and Methodological Issues in the Quest for the Thinking Computer. Springer
+ Clark, Liat. "Turing's achievements: codebreaking, AI and the birth of computer science". Wired. Retrieved 11 November 2013.
+ Alan Turing vs Alick Glennie (1952) "Turing Test" Chessgames.com
+ Kasparov, Garry, Smart machines will free us all, The Wall Street Journal, 15–16 April 2017, p. c3
+ O'Connor, J. J.; Robertson, E. F. "David Gawen Champernowne". MacTutor History of Mathematics archive, School of Mathematics and Statistics, University of St Andrews, Scotland. Retrieved 22 May 2018.
+ Pinar Saygin, A.; Cicekli, I.; Akman, V. (2000). "Turing Test: 50 Years Later". Minds and Machines. 10 (4): 463–518. doi:10.1023/A:1011288000451.
+ "SPICE 1 2 3 and beyond ... Intusoft Newsletter, August 2003". Intusoft.com. 16 August 2001. Archived from the original on 11 June 2011. Retrieved 29 May 2011.
+ Clark, Liat; Ian Steadman (18 June 2012). "Turing's achievements: codebreaking, AI and the birth of computer science". Wired. Retrieved 12 February 2013.
+ Turing, Alan M. (14 August 1952). "The Chemical Basis of Morphogenesis". Philosophical Transactions of the Royal Society of London B. 237 (641). pp. 37–72. Bibcode:1952RSPTB.237...37T. doi:10.1098/rstb.1952.0012.
+ John Gribbin, Deep Simplicity, p. 126, Random House, 2004
+ "Turing's Last, Lost work". Archived from the original on 23 August 2003. Retrieved 28 November 2011.
+ James Murray, How the leopard gets its spots, Scientific American, vol 258, number 3, p. 80, March 1988
+ James Murray, Mathematical Biology I, 2007, Chapter 6, Springer Verlag
+ John Gibbin, Deep Simplicity, p. 134, Random House, 2004
+ Vogel, G. (2012). "Turing Pattern Fingered for Digit Formation". Science. 338 (6113): 1406. doi:10.1126/science.338.6113.1406. PMID 23239707.
+ Sheth, R.; Marcon, L.; Bastida, M. F.; Junco, M.; Quintana, L.; Dahn, R.; Kmita, M.; Sharpe, J.; Ros, M. A. (2012). "Hox Genes Regulate Digit Patterning by Controlling the Wavelength of a Turing-Type Mechanism". Science. 338 (6113): 1476–1480. Bibcode:2012Sci...338.1476S. doi:10.1126/science.1226804. PMC 4486416. PMID 23239739.
+ Andrew Hodges. "The Alan Turing Bibliography". turing.org.uk. p. morphogenesis. Retrieved 27 July 2015.
+ Leavitt 2007, pp. 176–178
+ Hodges 1983, p. 458
+ ANS SKmks Sksnks SMSNsks kndkdn SNksnkn 
+ Hodges, Andrew (27 May 2012). Alan Turing: The Enigma. p. 463. ISBN 0-691-15564-X.
+ Hodges, Andrew (27 May 2012). Alan Turing: The Enigma. p. 471. ISBN 0-691-15564-X.
+ Hodges, Andrew (2012). Alan Turing: The Enigma The Centenary Edition. Princeton University.
+ Turing, Alan (1952). "Letters of Note: Yours in distress, Alan". Archived from the original on 16 December 2012.
+ Hodges, Andrew (27 May 2012). Alan Turing: The Enigma. p. xxviii. ISBN 0-691-15564-X.
+ Hodges 1983, p. 473
+ Copeland 2006, p. 143
+ "Alan Turing | Biography, Facts, & Education". Encyclopædia Britannica. Retrieved 11 October 2017.
+ Hodges 1983, p. 488
+ Hodges 1983, p. 529
+ Leavitt 2007, p. 140 and Hodges 1983, pp. 149, 489
+ Pease, Roland (23 June 2012). "Alan Turing: Inquest's suicide verdict 'not supportable'". BBC News. Retrieved 23 June 2012. We have ... been recreating the narrative of Turing's life, and we have recreated him as an unhappy young man who committed suicide. But the evidence is not there"
+ Of All the things I have lost, I miss my mind the most   
+ Hodges 1983, pp. 488, 489
+ Thousands call for Turing apology. BBC News. 31 August 2009. Retrieved 31 August 2009.
+ Petition seeks apology for Enigma code-breaker Turing. CNN. 1 September 2009. Archived from the original on 5 October 2009. Retrieved 1 September 2009.
+ Davies, Caroline (11 September 2009). "PM's apology to codebreaker Alan Turing: we were inhumane". The Guardian. UK.
+ The petition was only open to UK citizens.
+ "PM apology after Turing petition". BBC News. 11 September 2009.
+ Full text of the Prime Minister's apology.
+ "Grant a pardon to Alan Turing". 6 December 2011. Archived from the original on 10 January 2012.
+ "Petition to pardon computer pioneer Alan Turing started". BBC News. 6 December 2011.
+ Wainwright, Martin (7 February 2012). "Government rejects a pardon for computer genius Alan Turing". The Guardian.
+ "hansard". Parliament of the United Kingdom. 2 February 2012.
+ Stevenson, Alex. "Better late than never, Alan Turing is finally pardoned". politics.co.uk. Retrieved 25 September 2016.
+ Fitzgerald, Todd (24 September 2016). "Alan Turing's court convictions go on display for the first time". manchestereveningnews.co.uk. Retrieved 25 September 2016.
+ "MP calls for pardon for computer pioneer Alan Turing". BBC News. 1 February 2012. Retrieved 25 September 2016.
+ "My proudest day as a Liberal Democrat". Liberal Democrat Voice. Retrieved 2018-06-24.
+ Britton, Paul (2013-12-24). "Alan Turing pardoned by The Queen for his 'unjust and discriminatory' conviction for homosexuality". men. Retrieved 2018-06-24.
+ "Bill". Parliament of the United Kingdom. 26 July 2012. Retrieved 31 October 2013.
+ Pearse, Damian, "Alan Turing should be pardoned, argue Stephen Hawking and top scientists", The Guardian, 13 December 2012. Retrieved 15 December 2012.
+ Watt, Nicholas (19 July 2013). "Enigma codebreaker Alan Turing to be given posthumous pardon". The Guardian. London.
+ Worth, Dan (30 October 2013). "Alan Turing pardon sails through House of Lords". V3. Retrieved 24 December 2013.
+ "Alan Turing (Statutory Pardon) Bill". Retrieved 20 July 2013.
+ Roberts, Scott (2 December 2013). "Lib Dem MP John Leech disappointed at delay to Alan Turing pardon bill". Pink News.
+ Roberts, Scott (2 December 2013). "Lib Dem MP John Leech disappointed at delay to Alan Turing pardon bill". PinkNews. Retrieved 20 June 2018.
+ "Alan Turing (Statutory Pardon) Bill". Retrieved 24 December 2013.
+ "With Queen's Decree, Alan Turing Is Now Officially Pardoned". Advocate.com. Retrieved 1 November 2014.
+ Pardoned: Alan Turing, Computing patriarch. Time Magazine, vol. 183, no. 1, 13 January 2014, p. 14. Retrieved 6 January 2014.
+ Davies, Caroline (24 December 2013). "Codebreaker Turing is given posthumous royal pardon". The Guardian. London. pp. 1, 6.
+ Tatchell, Peter (24 December 2013). "Alan Turing: Was He Murdered By the Security Services?". The Huffington Post UK. Retrieved 29 December 2013.
+ Tatchell, Peter (27 December 2013). "The Big Questions: Do we need an inquiry into the death of Alan Turing? Should Britain boycott Sochi?". The Independent. Retrieved 14 February 2017.
+ "Government 'committed' to Alan Turing gay pardon law". BBC News. 22 September 2016. Retrieved 22 September 2016.
+ Cowburn, Ashley (21 September 2016). "Theresa May committed to introducing the 'Alan Turing Law'". The Independent. Retrieved 22 September 2016.
+ http://www.legislation.gov.uk/ukpga/2017/3/section/182
+ "Acacemic facilities". King's College Cambridge. Retrieved 12 May 2014.
+ "Turing prints (2000)". Synth.co.uk. 24 September 2000. Retrieved 31 October 2013.
+ "The Earl of Wessex unveils statue of Alan Turing" (Press release). University of Surrey. October 2004. Archived from the original on 23 October 2007.
+ "A celebration of the code breaker – Alan Turing". University of Surrey. Archived from the original on 25 December 2013. Retrieved 24 December 2013.
+ "The Imitation Game: 10 surprising facts about Bletchley Park genius Alan Turing". V3.co.uk. Retrieved 17 April 2015.
+ "Turing Scholars Program at the University of Texas at Austin". Retrieved 17 May 2015.
+ "Polya Hall, Stanford University" (PDF). Retrieved 14 June 2011.
+ "Laboratoire d'Informatique Fondamentale de Lille". Retrieved 3 December 2010.
+ "Turing Center". University of Washington. 10 June 2016.
+ "Department of Computing and Communication Technologies Research Lecture Series lecture 4". Standford everywhere 16 September 2017.
+ Cooksey, Katie (24 December 2013). "Alan Turing: Manchester celebrates pardoned genius". BBC News. Retrieved 24 December 2013.
+ "File:A. M. Turing bench, Carnegie Mellon University, Pittsburgh PA, USA.jpg".
+ "Turing at the University of Oregon". Retrieved 1 November 2011.
+ "Turing at the EPFL". Retrieved 6 January 2012.
+ "Lecture rooms". Retrieved 28 February 2015.
+ "Thèses soutenues Université Paris Diderot". University Paris Diderot. 10 June 2016.
+ "Turing Hörsaal at University of Würzburg". Archived from the original on 28 July 2014. Retrieved 21 July 2014.
+ Paul Sabatier University campus map
+ "Facilities / Catering and conference". Amsterdam Science Park. Archived from the original on 11 January 2015. Retrieved 11 January 2015.
+ "King's College London Prizes" (PDF). KCL. 10 June 2016. Archived from the original (PDF) on 8 August 2016.
+ "How the University of Kent's new Turing College got its name". Kent Online. 10 June 2016.
+ "INRIA". 2012. Archived from the original on 2012. Retrieved 19 March 2017.
+ "Tech Crunch Science and Technology Park" (PDF). Inova. 1 July 2016.
+ "Computer rooms at the university of Ghent".
+ Geringer, Steven (27 July 2007). "ACM'S Turing Award Prize Raised To $250,000". ACM press release. Archived from the original on 30 December 2008. Retrieved 16 October 2008.
+ "Unveiling the official Blue Plaque on Alan Turing's Birthplace". Retrieved 26 September 2006.
+ "About this Plaque – Alan Turing". Archived from the original on 13 October 2007. Retrieved 25 September 2006.
+ Plaque #3276 on Open Plaques.
+ IEEE History Center (2003). "Milestones:Code-breaking at Bletchley Park during World War II, 1939–1945". IEEE Global History Network. IEEE. Retrieved 29 March 2012.
+ "Dangerous Knowledge". BBC Four. 11 June 2008. Archived from the original on 2 November 2011.
+ Bletchley Park Unveils Statue Commemorating Alan Turing, Bletchley Park press release, 20 June 2007.
+ "What does the code on the Alan Turing Memorial actually say?". Random Hacks. 2010-09-23. Retrieved 2018-06-28.
+ "Computer buried in tribute to genius". Manchester Evening News. 17 February 2007. Retrieved 7 December 2014.
+ "100 great British heroes". BBC News. 21 August 2002.
+ James, Ioan M. (2006). Asperger's Syndrome and High Achievement. Jessica Kingsley. ISBN 978-1-84310-388-2.
+ Garner, Alan (12 November 2011). "My Hero: Alan Turing". Saturday Guardian Review. London. p. 5. Retrieved 23 November 2011.
+ "Alan Turing". LGBTHistoryMonth.com. 20 August 2011. Retrieved 15 January 2014.
+ "Boston Pride: Honorary Grand Marshal". Archived from the original on 19 June 2006. Retrieved 23 November 2017.
+ "Logos that became legends: Icons from the world of advertising". The Independent. UK. 4 January 2008. Archived from the original on 3 October 2009. Retrieved 14 September 2009.
+ "Interview with Rob Janoff, designer of the Apple logo". creativebits. Retrieved 14 September 2009.
+ Leavitt 2007, p. 280
+ "Turing and the Apple logo". 25 July 2015. Archived from the original on 25 December 2015. Retrieved 25 December 2015.
+ "Science & Environment – Alan Turing: Separating the man and the myth". BBC. Retrieved 23 June 2012.
+ Halliday, Josh (25 February 2011). "Turing papers to stay in UK after 11th-hour auction bid at". The Guardian. UK. Retrieved 29 May 2011.
+ Salvo, Victor. "2012 INDUCTEES". The Legacy Project. Retrieved 1 November 2014.
+ "PHOTOS: 7 LGBT Heroes Honored With Plaques in Chicago's Legacy Walk". Advocate.com. Retrieved 1 November 2014.
+ Kamiab, Farbod (20 November 2012). Alan et la Pomme – Salvatore Adamo. Retrieved 26 December 2013 – via YouTube.[better source needed]
+ "Cryptologic Hall of Honor – Alan Turing". National Security Agency. 22 October 2014. Retrieved 14 February 2017.
+ "Five Cryptologists Added to NSA/CSS Cryptologic Hall of Honor" (Press release). National Security Agency. 22 October 2014. Retrieved 14 February 2017.
+ "Google Doodle honors Alan Turing". USA Today. 22 June 2012. Retrieved 23 June 2012.
+ "Special Monopoly edition celebrates Alan Turing's life". BBC News. 10 September 2012. Retrieved 10 September 2012.
+ "Bletchley Park Launches Special Edition Alan Turing Monopoly Board". Retrieved 13 September 2012.
+ "DLSU to host int'l summit on philosophy". ABS-CBN.com. 24 March 2012. Retrieved 18 December 2013.
+ Layug-Rosero, Regina (21 April 2012). "The Thinking Machine: A philosophical analysis of the Singularity". GMA News Online. Retrieved 18 December 2013.
+ Shankar, M. Gopi (5 July 2012). "Making themselves heard". The Hindu. Chennai, India. Retrieved 31 October 2013.
+ "The Northerner: Alan Turing, computer pioneer, has centenary marked by a year of celebrations". theguardian.com. The Guardian. 23 February 2011. Retrieved 29 May 2011.
+ Cellan-Jones, Rory; Rooney (curator), David (18 June 2012). "Enigma? First look at Alan Turing exhibition (report with video preview)". BBC News. Retrieved 23 June 2012.
+ Cutlack, Gary (2 January 2012). "Codebreaker Alan Turing gets stamp of approval". Gizmodo. Retrieved 2 January 2012.
+ Anon (22 June 2012). "Centenary award tribute to "enigma" codebreaker Alan Turing". Manchester Evening News. Manchester: MEN media. Retrieved 22 June 2012.
+ "Computer Science and philosophy". University of Oxford. Archived from the original on 30 March 2013. Retrieved 23 June 2013. A new undergraduate degree course, with its first students having started in 2012, the centenary of Alan Turing's birth.
+ "BSHM Meetings (1992–2007)". University of Warwick. Retrieved 24 December 2013.
+ "Alan Turing: A multitude of lives in fiction". BBC News. 23 June 2012.
+ "The Life and Death(s) of Alan Turing – a new opera". American Lyric Theater. Archived from the original on 22 January 2015.
+ "Alan Turing, Man and Myth – Studio 360". studio360. Archived from the original on 22 January 2015.
+ Jones, Josh (16 January 2017). "Alan Turing Gets Channeled in a New Opera". Open Culture. Retrieved 25 July 2017.
+ "SCIENCE FICTION". The New York Times. 24 November 1985. Retrieved 25 September 2016.
+ "Click Here". Retrieved 25 September 2016.
+ http://www.bbc.co.uk/doctorwho/classic/books/turingtest/
+ Holt, Jim (3 September 2006), "Obsessive-Genius Disorder", The New York Times.
+ "Review: 'Speak' by Louisa Hall". Chicago Tribune. Retrieved 31 January 2016.
+ Waldman, Katy. "'Speak,' by Louisa Hall". The New York Times. Retrieved 31 January 2016.
+ Truitt, Brian. "'Uber' explores monsters and men of World War II". USA Today. Retrieved 13 April 2017.
+ "Matmos release For Alan Turing". Vague Terrain. Retrieved 5 February 2015.
+ Sheppard, Justin (7 September 2006). "Track Review: Matmos — Enigma Machine For Alan Turing". Prefix Mag. Retrieved 5 February 2015.
+ Rodríguez Ramos, Javier (29 May 2012). "Hidrogenesse, 'Un dígito binario dudoso'". El País – Cultura (in Spanish). Retrieved 5 February 2015.
+ Portwood, Jerry (13 September 2012). "Pet Shop Boys Working on Alan Turing Project". Out magazine. Retrieved 29 December 2013.
+ "BBC Radio 3 – BBC Proms, 2014 Season, Prom 8: Pet Shop Boys". BBC. Retrieved 1 November 2014.
+ "Hertfordshire Chorus – James McCarthy: Codebreaker, a life in music". Classical Music Magazine. Retrieved 14 November 2014.
+ Codebreaker on YouTube
+ Brooks, Brian. "'The Imitation Game' Will Stuff Theaters This Holiday Weekend – Specialty Box Office Preview". Deadline.
+ Charles, McGrath (30 October 2014). "The Riddle Who Unlocked the Enigma – 'The Imitation Game' Dramatises the Story of Alan Turing". The New York Times. Retrieved 2 November 2014.
+ Walters, Ben (9 October 2014). "The Imitation Game: the queerest thing to hit multiplexes for years?". The Guardian. Retrieved 14 November 2014.
+ Bradshaw, Peter (13 November 2014). "The Imitation Game review – Cumberbatch cracks biopic code". The Guardian. Retrieved 14 November 2014.
+ Chris Harvey. "Britain's Greatest Codebreaker: the tragic story of Alan Turing". The Daily Telegraph. Retrieved 10 January 2015.
+Sources
+Agar, Jon (2001). Turing and the Universal Machine. Duxford: Icon. ISBN 978-1-84046-250-0.
+Agar, Jon (2003). The government machine: a revolutionary history of the computer. Cambridge, Massachusetts: MIT Press. ISBN 978-0-262-01202-7.
+Alexander, C. Hugh O'D. (c. 1945). "Cryptographic History of Work on the German Naval Enigma". The National Archives, Kew, Reference HW 25/1.
+Beavers, Anthony (2013). "Alan Turing: Mathematical Mechanist". In Cooper, S. Barry; van Leeuwen, Jan. Alan Turing: His Work and Impact. Waltham: Elsevier. pp. 481–485. ISBN 978-0-12-386980-7.
+Beniger, James (1986). The control revolution: technological and economic origins of the information society. Cambridge, Massachusetts: Harvard University Press. ISBN 0-674-16986-7.
+Babbage, Charles (1864). Campbell-Kelly, Martin, ed. Passages from the life of a philosopher. Rough Draft Printing (published 2008). ISBN 978-1-60386-092-5.
+Bodanis, David (2005). Electric Universe: How Electricity Switched on the Modern World. New York: Three Rivers Press. ISBN 0-307-33598-4. OCLC 61684223.
+Bruderer, Herbert: Konrad Zuse und die Schweiz. Wer hat den Computer erfunden? Charles Babbage, Alan Turing und John von Neumann Oldenbourg Verlag, München 2012, XXVI, 224 Seiten, ISBN 978-3-486-71366-4
+Campbell-Kelly, Martin; Aspray, William (1996). Computer: A History of the Information Machine. New York: Basic Books. ISBN 0-465-02989-2.
+Ceruzzi, Paul (1998). A History of Modern Computing. Cambridge, Massachusetts, and London: MIT Press. ISBN 0-262-53169-0.
+Chandler, Alfred (1977). The Visible Hand: The Managerial Revolution in American Business. Cambridge, Massachusetts: Belknap Press. ISBN 0-674-94052-0.
+Church, Alonzo (1936). "An Unsolvable Problem of Elementary Number Theory". American Journal of Mathematics. 58 (2): 345. doi:10.2307/2371045. ISSN 0002-9327. JSTOR 2371045.
+Cooper, S. Barry; van Leeuwen, Jan (2013). Alan Turing: His Work and Impact. New York: Elsevier. ISBN 978-0-12-386980-7.
+Copeland, B. Jack (2004a). "Colossus: Its Origins and Originators". IEEE Annals of the History of Computing. 26 (4): 38–45. doi:10.1109/MAHC.2004.26.
+Copeland, B. Jack (ed.) (2004b). The Essential Turing. Oxford: Oxford University Press. ISBN 0-19-825079-7. OCLC 156728127.
+Copeland (ed.), B. Jack (2005). Alan Turing's Automatic Computing Engine. Oxford: Oxford University Press. ISBN 0-19-856593-3. OCLC 224640979.
+Copeland, B. Jack (2006). Colossus: The secrets of Bletchley Park's code-breaking computers. Oxford University Press. ISBN 978-0-19-284055-4.
+Hilton, Peter (2006). "Living with Fish: Breaking Tunny in the Newmanry and Testery". Colussus. in Copeland 2006, pp. 189–203
+Edwards, Paul N (1996). The closed world: computers and the politics of discourse in Cold War America. Cambridge, Massachusetts: MIT Press. ISBN 0-262-55028-8.
+Gannon, Paul (2007) [2006]. Colossus: Bletchley Park's Greatest Secret. London: Atlantic Books. ISBN 978-1-84354-331-2.
+Hodges, Andrew (1983). Alan Turing : the enigma. London: Burnett Books. ISBN 0-09-152130-0.
+Hochhuth, Rolf (1988). Alan Turing: en berättelse. Symposion. ISBN 978-91-7868-109-9.
+Leavitt, David (2007). The man who knew too much: Alan Turing and the invention of the computer. Phoenix. ISBN 978-0-7538-2200-5.
+Levin, Janna (2006). A Madman Dreams of Turing Machines. New York: Knopf. ISBN 978-1-4000-3240-2.
+Lewin, Ronald (1978). Ultra Goes to War: The Secret Story. Classic Military History (Classic Penguin ed.). London, England: Hutchinson & Co (published 2001). ISBN 978-1-56649-231-7.
+Lubar, Steven (1993). Infoculture. Boston, Massachusetts and New York: Houghton Mifflin. ISBN 0-395-57042-5.
+Mahon, A. P. (1945). "The History of Hut Eight 1939–1945". UK National Archives Reference HW 25/2. Retrieved 10 December 2009.
+Oakley, Brian, ed. (2006). The Bletchley Park War Diaries: July 1939 — August 1945 (2.6 ed.). Wynne Press.
+O'Connell, H; Fitzgerald, M (2003). "Did Alan Turing have Asperger's syndrome?". Irish Journal of Psychological Medicine. Irish Institute of Psychological Medicine. 20: 28–31. doi:10.1017/s0790966700007503. ISSN 0790-9667.
+O'Connor, John J.; Robertson, Edmund F., "Alan Mathison Turing", MacTutor History of Mathematics archive, University of St Andrews.
+Petzold, Charles (2008). "The Annotated Turing: A Guided Tour through Alan Turing's Historic Paper on Computability and the Turing Machine". Indianapolis: Wiley Publishing. ISBN 978-0-470-22905-7
+Smith, Roger (1997). Fontana History of the Human Sciences. London: Fontana.
+Sipser, Michael (2006). Introduction to the Theory of Computation. PWS Publishing. ISBN 0-534-95097-3.
+Weizenbaum, Joseph (1976). Computer Power and Human Reason. London: W.H. Freeman. ISBN 0-7167-0463-3
+Turing, A. M. (1937) [Delivered to the Society November 1936]. "On Computable Numbers, with an Application to the Entscheidungsproblem" (PDF). Proceedings of the London Mathematical Society. 2. 42. pp. 230–65. doi:10.1112/plms/s2-42.1.230. and Turing, A.M. (1938). "On Computable Numbers, with an Application to the Entscheidungsproblem: A correction". Proceedings of the London Mathematical Society. 2. 43 (published 1937). pp. 544–46. doi:10.1112/plms/s2-43.6.544.
+Turing, Sara Stoney (1959). Alan M Turing. W Heffer. Turing's mother, who survived him by many years, wrote this 157-page biography of her son, glorifying his life. It was published in 1959, and so could not cover his war work. Scarcely 300 copies were sold (Sara Turing to Lyn Newman, 1967, Library of St John's College, Cambridge). The six-page foreword by Lyn Irvine includes reminiscences and is more frequently quoted. It was re-published by Cambridge University Press in 2012, to honour the centenary of his birth, and included a new foreword by Martin Davis, as well as a never-before-published memoir by Turing's older brother John F. Turing.
+Whitemore, Hugh; Hodges, Andrew (1988). Breaking the code. S. French. This 1986 Hugh Whitemore play tells the story of Turing's life and death. In the original West End and Broadway runs, Derek Jacobi played Turing and he recreated the role in a 1997 television film based on the play made jointly by the BBC and WGBH, Boston. The play is published by Amber Lane Press, Oxford, ASIN: B000B7TM0Q
+Williams, Michael R. (1985) A History of Computing Technology, Englewood Cliffs, New Jersey: Prentice-Hall, ISBN 0-8186-7739-2
+Yates, David M. (1997). Turing's Legacy: A history of computing at the National Physical Laboratory 1945–1995. London: London Science Museum. ISBN 0-901805-94-7. OCLC 123794619.
+Further reading
+Articles
+Turing, Alan (1950). "Computing Machinery and Intelligence" (PDF). Mind. 49: 433–460.
+Copeland, B. Jack (ed.). "The Mind and the Computing Machine: Alan Turing and others". The Rutherford Journal.
+Copeland, B. Jack (ed.). "Alan Turing: Father of the Modern Computer". The Rutherford Journal.
+Hodges, Andrew (27 August 2007). "Alan Turing". In Edward N. Zalta (ed.). Stanford Encyclopedia of Philosophy (Winter 2009 ed.). Stanford University. Retrieved 10 January 2011.
+Hodges, Andrew (2004). "Turing, Alan Mathison". Oxford Dictionary of National Biography (online ed.). Oxford University Press. doi:10.1093/ref:odnb/36578. (Subscription or UK public library membership required.)
+Gray, Paul (29 March 1999). "Computer Scientist: Alan Turing". Time.
+Books
+Bernhardt, Chris (2017), Turing's Vision: The Birth of Computer Science, MIT Press, ISBN 978-0262533515
+Copeland, B. Jack; Bowen, Jonathan P.; Wilson, Robin; Sprevak, Mark (2017). The Turing Guide. Oxford University Press. ISBN 978-0198747833.
+Dyson, George (2012). Turing's Cathedral: The Origins of the Digital Universe. Vintage. ISBN 978-1400075997.
+Gleick, James (2011). The Information: A History, a Theory, a Flood. New York: Pantheon. ISBN 978-0-375-42372-7.
+Hodges, Andrew (2014). Alan Turing: The Enigma. Princeton University Press. ISBN 978-0691164724. (originally published in 1983); basis of the film The Imitation Game
+External links
+	Wikimedia Commons has media related to Alan Turing.
+	Wikiquote has quotations related to: Alan Turing
+Oral history interview with Nicholas C. Metropolis, Charles Babbage Institute, University of Minnesota. Metropolis was the first director of computing services at Los Alamos National Laboratory; topics include the relationship between Turing and John von Neumann
+How Alan Turing Cracked The Enigma Code Imperial War Museums
+Alan Turing RKBExplorer
+Alan Turing Year
+CiE 2012: Turing Centenary Conference
+Science in the Making Alan Turing's papers in the Royal Society's archives
+Alan Turing site maintained by Andrew Hodges including a short biography
+AlanTuring.net – Turing Archive for the History of Computing by Jack Copeland
+The Turing Archive – contains scans of some unpublished documents and material from the King's College, Cambridge archive
+Alan Turing Papers, University of Manchester Library, Manchester
+Jones, G. James (11 December 2001). "Alan Turing – Towards a Digital Mind: Part 1". System Toolbox. The Binary Freedom Project. Archived from the original on 3 August 2007.
+Happy 100th Birthday, Alan Turing by Stephen Wolfram.
+Sherborne School Archives – holds papers relating to Turing's time at Sherborne School
+Alan Turing plaques recorded on openplaques.org
+vte
+Fellows of the Royal Society elected in 1951
+Fellows	
+Carlyle Smith Beals John Boyd David Catcheside Arthur Herbert Cook Sydney John Folley Herbert Fröhlich Geoffrey Gee Hans Heilbronn Gerhard Herzberg Joseph Hutchinson Raymond Ing David Lack Thaddeus Mann Kurt Mendelssohn Albert Neuberger Leonard Bessemer Pfeil James Arthur Prescott Maurice Pryce William John Pugh John Ashworth Ratcliffe Thomas Alan Stephenson William Homan Thorpe Petrus Johann du Toit Alan Turing Alfred Ubbelohde
+Statute 12	
+Prince Philip, Duke of Edinburgh
+Foreign	
+Herbert McLean Evans Karl Lashley Carl Størmer Ralph Walter Graystone Wyckoff
+Internet map 1024.jpgComputer science portalCrypto key.svgCryptography portalDesktop computer clipart - Yellow theme.svgInformation technology portalNuvola LGBT flag.svgLGBT portalEngland Greater Manchester numbered.svgGreater Manchester portalNuvola apps edu mathematics blue-p.svgMathematics portal
+Authority control Edit this at Wikidata	
+WorldCat Identities ACM DL: 81100339134 BNE: XX945020 BNF: cb12205670t (data) DBLP: t/AlanMTuring GND: 118802976 ISNI: 0000 0001 1058 9902 LCCN: n83171546 MGP: 8014 NDL: 00621580 NKC: jn19990008646 SELIBR: 254262 SNAC: w65x59c7 SUDOC: 030691621 VIAF: 41887917
+Categories: Alan Turing1912 births1954 deaths20th-century mathematiciansAcademics of the University of Manchester Institute of Science and TechnologyAlumni of King's College, CambridgeArtificial intelligence researchersBayesian statisticiansBritish cryptographersBritish male long-distance runnersBritish people of World War IIComputability theoristsComputer designersEnglish atheistsEnglish computer scientistsEnglish inventorsEnglish logiciansEnglish male long-distance runnersEnglish mathematiciansEnglish people of Scottish descentEnglish philosophersFormer ProtestantsFellows of the Royal SocietyGay menGovernment Communications Headquarters peopleHistory of artificial intelligenceInventors who committed suicideMale suicidesLGBT scientists from the United KingdomMathematicians who committed suicideOfficers of the Order of the British EmpireBletchley Park peoplePeople educated at Sherborne SchoolPeople from Maida ValePeople from WilmslowPeople prosecuted under anti-homosexuality lawsPrinceton University alumniProgrammers who committed suicidePeople who have received posthumous pardonsRecipients of British royal pardonsAcademics of the University of ManchesterSuicides by cyanide poisoningSuicides in EnglandTheoretical computer scientistsForeign Office personnel of World War IIBritish anti-fascistsLGBT and suicideLGBT scientists
+Navigation menu
+Not logged inTalkContributionsCreate accountLog inArticleTalkReadEditView historySearch
+
+Search Wikipedia
+Main page
+Contents
+Featured content
+Current events
+Random article
+Donate to Wikipedia
+Wikipedia store
+Interaction
+Help
+About Wikipedia
+Community portal
+Recent changes
+Contact page
+Tools
+What links here
+Related changes
+Upload file
+Special pages
+Permanent link
+Page information
+Wikidata item
+Cite this page
+Print/export
+Create a book
+Download as PDF
+Printable version
+In other projects
+Wikimedia Commons
+Wikinews
+Wikiquote
+
+Languages
+বাংলা
+ગુજરાતી
+हिन्दी
+ಕನ್ನಡ
+മലയാളം
+मराठी
+தமிழ்
+తెలుగు
+اردو
+129 more
+Edit links
+This page was last edited on 1 October 2018, at 13:22 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile viewWikimedia Foundation Powered by MediaWiki
